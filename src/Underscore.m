@@ -3,8 +3,9 @@
 typedef void (^void_id_NSUInteger_NSArray)(id, NSUInteger, NSArray *);
 typedef void (^void_id_NSSet)(id, NSSet *);
 typedef void (^void_id_id_NSDictionary)(id, id, NSDictionary *);
-
-Underscore *_;
+typedef id (^id_id_NSUInteger_NSArray)(id, NSUInteger, NSArray *);
+typedef id (^id_id_NSSet)(id, NSSet *);
+typedef id (^id_id_id_NSDictionary)(id, id, NSDictionary *);
 
 static BOOL isBlock(id obj) {
   return [NSStringFromClass([obj class]) rangeOfString:@"Block"].location != NSNotFound;
@@ -16,14 +17,9 @@ static BOOL isBlock(id obj) {
   object=_object
 ;
 
-@dynamic
-  each
-;
-
-+ (void)initialize {
-  if(self == [Underscore class]) {
-    _ = [[self alloc] initWithObject:nil];
-  }
+- (void)dealloc {
+  self.object = nil;
+  [super dealloc];
 }
 
 - (id)initWithObject:(id)object {
@@ -37,23 +33,17 @@ static BOOL isBlock(id obj) {
   return [[[self alloc] initWithObject:object] autorelease];
 }
 
-- (void(^)(id, ...))each {
+- (id(^)(void))value {
+  __block id object = self.object;
+  id block = ^id {
+    return object;
+  };
+  return [[block copy] autorelease];
+}
+
+- (Underscore *(^)(id))each {
   __block id list = self.object;
-  id block = ^(id arg1, ...) {
-    id iterator;
-    if([arg1 isKindOfClass:[NSArray class]] || [arg1 isKindOfClass:[NSDictionary class]] || [arg1 isKindOfClass:[NSSet class]]) {
-      list = arg1;
-      va_list args;
-      va_start(args, arg1);
-      iterator = va_arg(args, id);
-      va_end(args);
-      NSAssert(isBlock(iterator), @"iterator expected as the second argument.");
-    } else if(list) {
-      NSAssert(isBlock(arg1), @"iterator expected as the first argument.");
-      iterator = arg1;
-    } else {
-      NSAssert(NO, @"invalid arguments.");
-    }
+  id block = ^Underscore *(id iterator) {
     if(list && iterator) {
       if([list isKindOfClass:[NSArray class]]) {
         NSUInteger index = 0;
@@ -71,6 +61,34 @@ static BOOL isBlock(id obj) {
         }
       }
     }
+    return self;
+  };
+  return [[block copy] autorelease];
+}
+
+- (Underscore *(^)(id))map {
+  __block id list = self.object;
+  id block = ^Underscore *(id iterator) {
+    if(list && iterator) {
+      NSMutableArray *resultArray = [NSMutableArray arrayWithCapacity:[list count]];
+      if([list isKindOfClass:[NSArray class]]) {
+        NSUInteger index = 0;
+        for(id element in list) {
+          [resultArray addObject:((id_id_NSUInteger_NSArray)iterator)(element, index, list)];
+          index ++;
+        }
+      } else if([list isKindOfClass:[NSSet class]]) {
+        for(id element in list) {
+          [resultArray addObject:((id_id_NSSet)iterator)(element, list)];
+        }
+      } else if([list isKindOfClass:[NSDictionary class]]) {
+        for(id key in list) {
+          [resultArray addObject:((id_id_id_NSDictionary)iterator)([list objectForKey:key], key, list)];
+        }
+      }
+      self.object = resultArray;
+    }
+    return self;
   };
   return [[block copy] autorelease];
 }

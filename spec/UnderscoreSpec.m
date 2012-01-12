@@ -1,11 +1,10 @@
 #import "SpecHelper.h"
-#import "Underscore.h"
 
 SpecBegin(Underscore)
 
 describe(@"_", ^{
-  it(@"is a global instance of Underscore class", ^{
-    expect(_).toBeKindOf([Underscore class]);
+  it(@"is a global instance of UnderscoreFunctional class", ^{
+    expect(_).toBeKindOf([UnderscoreFunctional class]);
   });
 });
 

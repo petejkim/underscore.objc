@@ -1,5 +1,4 @@
 #import "SpecHelper.h"
-#import "Underscore.h"
 
 SpecBegin(Underscore_Macros)
 

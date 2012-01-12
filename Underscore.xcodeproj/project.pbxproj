@@ -9,16 +9,21 @@
 /* Begin PBXBuildFile section */
 		E93A1EA114BE8BA500040E7D /* CollectionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E93A1EA014BE8BA500040E7D /* CollectionsSpec.m */; };
 		E93A1EA414BE8BF100040E7D /* MacrosSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E93A1EA314BE8BF100040E7D /* MacrosSpec.m */; };
+		E9978FB714BF1DE100E159C0 /* ArraysSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E9978FB414BF166A00E159C0 /* ArraysSpec.m */; };
+		E9978FB914BF22F700E159C0 /* UnderscoreFunctional.h in Headers */ = {isa = PBXBuildFile; fileRef = E9978FB814BF22F700E159C0 /* UnderscoreFunctional.h */; };
+		E9978FBB14BF22FE00E159C0 /* UnderscoreFunctional.m in Sources */ = {isa = PBXBuildFile; fileRef = E9978FBA14BF22FE00E159C0 /* UnderscoreFunctional.m */; };
+		E9978FBD14BF236D00E159C0 /* UnderscoreMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = E9978FBC14BF236C00E159C0 /* UnderscoreMacros.h */; };
 		E9BDBADD14BE576100102FB5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BDBADC14BE576100102FB5 /* SenTestingKit.framework */; };
 		E9BDBAE114BE576100102FB5 /* libUnderscore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BDBAC714BE576100102FB5 /* libUnderscore.a */; };
 		E9BDBB0014BE5E7200102FB5 /* Underscore-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = E9BDBAFD14BE5E7200102FB5 /* Underscore-Prefix.pch */; };
-		E9BDBB0114BE5E7200102FB5 /* Underscore.h in Headers */ = {isa = PBXBuildFile; fileRef = E9BDBAFE14BE5E7200102FB5 /* Underscore.h */; };
-		E9BDBB0214BE5E7200102FB5 /* Underscore.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BDBAFF14BE5E7200102FB5 /* Underscore.m */; };
+		E9BDBB0114BE5E7200102FB5 /* _.h in Headers */ = {isa = PBXBuildFile; fileRef = E9BDBAFE14BE5E7200102FB5 /* _.h */; };
 		E9BDBB3114BE5E7D00102FB5 /* libExpecta-macosx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BDBB1F14BE5E7D00102FB5 /* libExpecta-macosx.a */; };
 		E9BDBB3514BE5E7D00102FB5 /* libSpecta-macosx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BDBB2614BE5E7D00102FB5 /* libSpecta-macosx.a */; };
 		E9BDBB3B14BE5FD200102FB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BDBACF14BE576100102FB5 /* Foundation.framework */; };
 		E9BDBB3C14BE5FDC00102FB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BDBACF14BE576100102FB5 /* Foundation.framework */; };
 		E9BDBB4514BE65DD00102FB5 /* UnderscoreSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BDBB4214BE652200102FB5 /* UnderscoreSpec.m */; };
+		E9D9C01914BF2A9A00130EB1 /* Underscore.h in Headers */ = {isa = PBXBuildFile; fileRef = E9D9C01814BF2A9A00130EB1 /* Underscore.h */; };
+		E9D9C01C14BF2AA200130EB1 /* Underscore.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D9C01B14BF2AA200130EB1 /* Underscore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,10 @@
 /* Begin PBXFileReference section */
 		E93A1EA014BE8BA500040E7D /* CollectionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionsSpec.m; sourceTree = "<group>"; };
 		E93A1EA314BE8BF100040E7D /* MacrosSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MacrosSpec.m; sourceTree = "<group>"; };
+		E9978FB414BF166A00E159C0 /* ArraysSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArraysSpec.m; sourceTree = "<group>"; };
+		E9978FB814BF22F700E159C0 /* UnderscoreFunctional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderscoreFunctional.h; sourceTree = "<group>"; };
+		E9978FBA14BF22FE00E159C0 /* UnderscoreFunctional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderscoreFunctional.m; sourceTree = "<group>"; };
+		E9978FBC14BF236C00E159C0 /* UnderscoreMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderscoreMacros.h; sourceTree = "<group>"; };
 		E9BDBAC714BE576100102FB5 /* libUnderscore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUnderscore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BDBACF14BE576100102FB5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E9BDBADB14BE576100102FB5 /* UnderscoreSpecs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnderscoreSpecs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,8 +50,7 @@
 		E9BDBAF914BE5E6900102FB5 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		E9BDBAFA14BE5E6900102FB5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E9BDBAFD14BE5E7200102FB5 /* Underscore-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Underscore-Prefix.pch"; sourceTree = "<group>"; };
-		E9BDBAFE14BE5E7200102FB5 /* Underscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Underscore.h; sourceTree = "<group>"; };
-		E9BDBAFF14BE5E7200102FB5 /* Underscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Underscore.m; sourceTree = "<group>"; };
+		E9BDBAFE14BE5E7200102FB5 /* _.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _.h; sourceTree = "<group>"; };
 		E9BDBB0514BE5E7D00102FB5 /* Test-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
 		E9BDBB0814BE5E7D00102FB5 /* EXPDoubleTuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EXPDoubleTuple.h; sourceTree = "<group>"; };
 		E9BDBB0914BE5E7D00102FB5 /* Expecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expecta.h; sourceTree = "<group>"; };
@@ -84,6 +92,8 @@
 		E9BDBB2E14BE5E7D00102FB5 /* SPTSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTSpec.h; sourceTree = "<group>"; };
 		E9BDBB4214BE652200102FB5 /* UnderscoreSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderscoreSpec.m; sourceTree = "<group>"; };
 		E9BDBB4414BE653600102FB5 /* SpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecHelper.h; sourceTree = "<group>"; };
+		E9D9C01814BF2A9A00130EB1 /* Underscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Underscore.h; sourceTree = "<group>"; };
+		E9D9C01B14BF2AA200130EB1 /* Underscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Underscore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +155,12 @@
 			isa = PBXGroup;
 			children = (
 				E9BDBAFD14BE5E7200102FB5 /* Underscore-Prefix.pch */,
-				E9BDBAFE14BE5E7200102FB5 /* Underscore.h */,
-				E9BDBAFF14BE5E7200102FB5 /* Underscore.m */,
+				E9978FBC14BF236C00E159C0 /* UnderscoreMacros.h */,
+				E9BDBAFE14BE5E7200102FB5 /* _.h */,
+				E9D9C01814BF2A9A00130EB1 /* Underscore.h */,
+				E9D9C01B14BF2AA200130EB1 /* Underscore.m */,
+				E9978FB814BF22F700E159C0 /* UnderscoreFunctional.h */,
+				E9978FBA14BF22FE00E159C0 /* UnderscoreFunctional.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -159,6 +173,7 @@
 				E9BDBB4214BE652200102FB5 /* UnderscoreSpec.m */,
 				E93A1EA314BE8BF100040E7D /* MacrosSpec.m */,
 				E93A1EA014BE8BA500040E7D /* CollectionsSpec.m */,
+				E9978FB414BF166A00E159C0 /* ArraysSpec.m */,
 			);
 			path = spec;
 			sourceTree = "<group>";
@@ -256,7 +271,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9BDBB0014BE5E7200102FB5 /* Underscore-Prefix.pch in Headers */,
-				E9BDBB0114BE5E7200102FB5 /* Underscore.h in Headers */,
+				E9BDBB0114BE5E7200102FB5 /* _.h in Headers */,
+				E9978FB914BF22F700E159C0 /* UnderscoreFunctional.h in Headers */,
+				E9978FBD14BF236D00E159C0 /* UnderscoreMacros.h in Headers */,
+				E9D9C01914BF2A9A00130EB1 /* Underscore.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +375,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9BDBB0214BE5E7200102FB5 /* Underscore.m in Sources */,
+				E9978FBB14BF22FE00E159C0 /* UnderscoreFunctional.m in Sources */,
+				E9D9C01C14BF2AA200130EB1 /* Underscore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +387,7 @@
 				E9BDBB4514BE65DD00102FB5 /* UnderscoreSpec.m in Sources */,
 				E93A1EA114BE8BA500040E7D /* CollectionsSpec.m in Sources */,
 				E93A1EA414BE8BF100040E7D /* MacrosSpec.m in Sources */,
+				E9978FB714BF1DE100E159C0 /* ArraysSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

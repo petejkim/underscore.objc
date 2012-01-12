@@ -19,7 +19,7 @@ Underscore.cocoa is a utility-belt library for Objective-C & Cocoa that provides
 ### Collections (Arrays, Sets, Dictionaries)
 
 ✓ each  
-× map  
+✓ map  
 × reduce  
 × reduceRight  
 × find  
@@ -101,7 +101,7 @@ Underscore.cocoa is a utility-belt library for Objective-C & Cocoa that provides
 ### Chaining
 
 × chain  
-× value
+✓ value
 
 ## CREDITS
 
