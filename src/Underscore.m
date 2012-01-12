@@ -6,6 +6,7 @@ typedef void (^void_id_id_NSDictionary)(id, id, NSDictionary *);
 typedef id (^id_id_NSUInteger_NSArray)(id, NSUInteger, NSArray *);
 typedef id (^id_id_NSSet)(id, NSSet *);
 typedef id (^id_id_id_NSDictionary)(id, id, NSDictionary *);
+typedef void (^void_NSUInteger)(NSUInteger);
 
 static BOOL isBlock(id obj) {
   return [NSStringFromClass([obj class]) rangeOfString:@"Block"].location != NSNotFound;
@@ -107,6 +108,21 @@ static BOOL isBlock(id obj) {
       self.object = [self.object subarrayWithRange:NSMakeRange(0, n)];
     } else {
       self.object = [NSArray array];
+    }
+    return self;
+  };
+  return [[block copy] autorelease];
+}
+
+#pragma mark - Utility
+
+- (Underscore *(^)(id))times {
+  id block = ^Underscore *(id iterator) {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      NSUInteger n = [self.object unsignedIntegerValue];
+      for(NSUInteger i = 0; i < n; i ++) {
+        ((void_NSUInteger)iterator)(i);
+      }
     }
     return self;
   };

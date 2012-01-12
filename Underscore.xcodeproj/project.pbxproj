@@ -27,6 +27,9 @@
 		E9D9C01F14BF3EF800130EB1 /* UnderscoreUnchained.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D9C01E14BF3EF800130EB1 /* UnderscoreUnchained.m */; };
 		E9D9C02114BF3F0100130EB1 /* UnderscoreUnchained.h in Headers */ = {isa = PBXBuildFile; fileRef = E9D9C02014BF3F0100130EB1 /* UnderscoreUnchained.h */; };
 		E9D9C02414BF48A500130EB1 /* ChainingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D9C02214BF408400130EB1 /* ChainingSpec.m */; };
+		E9D9C02814BF4A5100130EB1 /* UtilitySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D9C02714BF4A5100130EB1 /* UtilitySpec.m */; };
+		E9D9C02A14BF4DFA00130EB1 /* UnderscoreSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = E9D9C02914BF4DFA00130EB1 /* UnderscoreSupport.h */; };
+		E9D9C02C14BF4E0400130EB1 /* UnderscoreSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D9C02B14BF4E0400130EB1 /* UnderscoreSupport.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +103,9 @@
 		E9D9C01E14BF3EF800130EB1 /* UnderscoreUnchained.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderscoreUnchained.m; sourceTree = "<group>"; };
 		E9D9C02014BF3F0100130EB1 /* UnderscoreUnchained.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderscoreUnchained.h; sourceTree = "<group>"; };
 		E9D9C02214BF408400130EB1 /* ChainingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainingSpec.m; sourceTree = "<group>"; };
+		E9D9C02714BF4A5100130EB1 /* UtilitySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilitySpec.m; sourceTree = "<group>"; };
+		E9D9C02914BF4DFA00130EB1 /* UnderscoreSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnderscoreSupport.h; sourceTree = "<group>"; };
+		E9D9C02B14BF4E0400130EB1 /* UnderscoreSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnderscoreSupport.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,8 @@
 				E9D9C01E14BF3EF800130EB1 /* UnderscoreUnchained.m */,
 				E9978FB814BF22F700E159C0 /* UnderscoreFunctional.h */,
 				E9978FBA14BF22FE00E159C0 /* UnderscoreFunctional.m */,
+				E9D9C02914BF4DFA00130EB1 /* UnderscoreSupport.h */,
+				E9D9C02B14BF4E0400130EB1 /* UnderscoreSupport.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -182,6 +190,7 @@
 				E93A1EA314BE8BF100040E7D /* MacrosSpec.m */,
 				E93A1EA014BE8BA500040E7D /* CollectionsSpec.m */,
 				E9978FB414BF166A00E159C0 /* ArraysSpec.m */,
+				E9D9C02714BF4A5100130EB1 /* UtilitySpec.m */,
 				E9D9C02214BF408400130EB1 /* ChainingSpec.m */,
 			);
 			path = spec;
@@ -285,6 +294,7 @@
 				E9978FBD14BF236D00E159C0 /* UnderscoreMacros.h in Headers */,
 				E9D9C01914BF2A9A00130EB1 /* Underscore.h in Headers */,
 				E9D9C02114BF3F0100130EB1 /* UnderscoreUnchained.h in Headers */,
+				E9D9C02A14BF4DFA00130EB1 /* UnderscoreSupport.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +398,7 @@
 				E9978FBB14BF22FE00E159C0 /* UnderscoreFunctional.m in Sources */,
 				E9D9C01C14BF2AA200130EB1 /* Underscore.m in Sources */,
 				E9D9C01F14BF3EF800130EB1 /* UnderscoreUnchained.m in Sources */,
+				E9D9C02C14BF4E0400130EB1 /* UnderscoreSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +411,7 @@
 				E93A1EA414BE8BF100040E7D /* MacrosSpec.m in Sources */,
 				E9978FB714BF1DE100E159C0 /* ArraysSpec.m in Sources */,
 				E9D9C02414BF48A500130EB1 /* ChainingSpec.m in Sources */,
+				E9D9C02814BF4A5100130EB1 /* UtilitySpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

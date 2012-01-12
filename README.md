@@ -94,7 +94,7 @@ Underscore.cocoa is a utility-belt library for Objective-C & Cocoa that provides
 ### Utility
 
 × identity  
-× times  
+✓ times  
 × uniqueId  
 × escape
 

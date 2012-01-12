@@ -25,10 +25,9 @@
 
 #pragma mark - Collections
 
-- (id(^)(id))each {
-  __block id list = self.object;
-  id block = ^id(id iterator) {
-    return self.chain().each(iterator).value();
+- (void(^)(id))each {
+  id block = ^(id iterator) {
+    self.chain().each(iterator);
   };
   return [[block copy] autorelease];
 }
@@ -52,6 +51,15 @@
 - (NSArray *(^)(NSUInteger))firstN {
   id block = ^NSArray *(NSUInteger n) {
     return self.chain().firstN(n).value();
+  };
+  return [[block copy] autorelease];
+}
+
+#pragma mark - Utility
+
+- (void(^)(id))times {
+  id block = ^(id iterator) {
+    self.chain().times(iterator);
   };
   return [[block copy] autorelease];
 }

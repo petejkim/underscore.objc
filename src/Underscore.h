@@ -19,6 +19,10 @@
 @property (nonatomic, readonly) Underscore *(^first)(void);
 @property (nonatomic, readonly) Underscore *(^firstN)(NSUInteger n);
 
+#pragma mark - Utility
+
+@property (nonatomic, readonly) Underscore *(^times)(id iterator);
+
 #pragma mark - Chaining
 
 @property (nonatomic, readonly) Underscore *(^chain)(void);

@@ -1,6 +1,5 @@
 #import "UnderscoreFunctional.h"
-#import "UnderscoreUnchained.h"
-#import "UnderscoreMacros.h"
+#import "UnderscoreSupport.h"
 
 UnderscoreFunctional *_;
 
@@ -14,15 +13,15 @@ UnderscoreFunctional *_;
 
 #pragma mark - Collections
 
-- (id(^)(id, id))each {
-  id block = ^id(id list, id iterator) {
-    return _(list).each(iterator);
+- (void(^)(id, id))each {
+  id block = ^(id list, id iterator) {
+    _(list).each(iterator);
   };
   return [[block copy] autorelease];
 }
 
 - (id(^)(id, id))map {
-  id block = ^(id list, id iterator) {
+  id block = ^id(id list, id iterator) {
     return _(list).map(iterator);
   };
   return [[block copy] autorelease];
@@ -40,6 +39,15 @@ UnderscoreFunctional *_;
 - (NSArray *(^)(NSArray *, NSUInteger))firstN {
   id block = ^id(NSArray *array, NSUInteger n) {
     return _(array).firstN(n);
+  };
+  return [[block copy] autorelease];
+}
+
+#pragma mark - Utility
+
+- (void(^)(NSUInteger, id))times {
+  id block = ^(NSUInteger n, id iterator) {
+    _(n).times(iterator);
   };
   return [[block copy] autorelease];
 }

@@ -1,4 +1,5 @@
 #import "UnderscoreMacros.h"
 #import "Underscore.h"
+#import "UnderscoreSupport.h"
 #import "UnderscoreUnchained.h"
 #import "UnderscoreFunctional.h"

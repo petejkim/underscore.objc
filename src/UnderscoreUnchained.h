@@ -15,13 +15,17 @@
 
 #pragma mark - Collections
 
-@property (nonatomic, readonly) id(^each)(id iterator);
+@property (nonatomic, readonly) void(^each)(id iterator);
 @property (nonatomic, readonly) NSArray *(^map)(id iterator);
 
 #pragma mark - Arrays
 
 @property (nonatomic, readonly) id(^first)(void);
 @property (nonatomic, readonly) NSArray *(^firstN)(NSUInteger n);
+
+#pragma mark - Utility
+
+@property (nonatomic, readonly) void(^times)(id iterator);
 
 #pragma mark - Chaining
 
@@ -31,4 +35,3 @@
 
 @end
 
-#define _(object) [UnderscoreUnchained underscoreUnchainedWithObject:(object)]
