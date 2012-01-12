@@ -8,6 +8,7 @@ __block NSSet *set;
 __block NSMutableSet *set2;
 __block NSDictionary *dic;
 __block NSMutableDictionary *dic2;
+__block id val;
 
 before(^{
   arr = _a(@"foo", @"bar");
@@ -20,7 +21,7 @@ before(^{
 
 describe(@"each", ^{
   context(@"Array", ^{
-    specify(@"functional", ^{
+    specify(@"functional style", ^{
       _.each(arr, ^(id element, NSUInteger index, NSArray *list) {
         expect([list objectAtIndex:index]).toEqual(element);
         [arr2 addObject:element];
@@ -28,18 +29,26 @@ describe(@"each", ^{
       expect(arr).toEqual(arr2);
     });
 
-    specify(@"object-oriented", ^{
-      Underscore *u = _(arr).each(^(id element, NSUInteger index, NSArray *list) {
+    specify(@"object-oriented style", ^{
+      _(arr).each(^(id element, NSUInteger index, NSArray *list) {
         expect([list objectAtIndex:index]).toEqual(element);
         [arr2 addObject:element];
       });
-      expect(u).toBeKindOf([Underscore class]);
-      expect(u.value()).toEqual(arr2);
+      expect(arr).toEqual(arr2);
+    });
+
+    specify(@"chained", ^{
+      val = _(arr).chain().each(^(id element, NSUInteger index, NSArray *list) {
+        expect([list objectAtIndex:index]).toEqual(element);
+        [arr2 addObject:element];
+      }).value();
+      expect(val).toEqual(arr);
+      expect(arr).toEqual(arr2);
     });
   });
 
   context(@"Set", ^{
-    specify(@"functional", ^{
+    specify(@"functional style", ^{
       _.each(set, ^(id element, NSSet *list) {
         expect([list containsObject:element]).toEqual(YES);
         [set2 addObject:element];
@@ -47,18 +56,26 @@ describe(@"each", ^{
       expect(set).toEqual(set2);
     });
 
-    specify(@"object-oriented", ^{
-      Underscore *u = _(set).each(^(id element, NSSet *list) {
+    specify(@"object-oriented style", ^{
+      _(set).each(^(id element, NSSet *list) {
         expect([list containsObject:element]).toEqual(YES);
         [set2 addObject:element];
       });
-      expect(u).toBeKindOf([Underscore class]);
-      expect(u.value()).toEqual(set2);
+      expect(set).toEqual(set2);
+    });
+
+    specify(@"chained", ^{
+      val = _(set).chain().each(^(id element, NSSet *list) {
+        expect([list containsObject:element]).toEqual(YES);
+        [set2 addObject:element];
+      }).value();
+      expect(val).toEqual(set);
+      expect(set).toEqual(set2);
     });
   });
 
   context(@"Dictionary", ^{
-    specify(@"functional", ^{
+    specify(@"functional style", ^{
       _.each(dic, ^(id value, id key, NSDictionary *list) {
         expect([list objectForKey:key]).toEqual(value);
         [dic2 setObject:value forKey:key];
@@ -66,20 +83,28 @@ describe(@"each", ^{
       expect(dic).toEqual(dic2);
     });
 
-    specify(@"object-oriented", ^{
-      Underscore *u = _(dic).each(^(id value, id key, NSDictionary *list) {
+    specify(@"object-oriented style", ^{
+      _(dic).each(^(id value, id key, NSDictionary *list) {
         expect([list objectForKey:key]).toEqual(value);
         [dic2 setObject:value forKey:key];
       });
-      expect(u).toBeKindOf([Underscore class]);
-      expect(u.value()).toEqual(dic2);
+      expect(dic).toEqual(dic2);
+    });
+
+    specify(@"chained", ^{
+      val = _(dic).chain().each(^(id value, id key, NSDictionary *list) {
+        expect([list objectForKey:key]).toEqual(value);
+        [dic2 setObject:value forKey:key];
+      }).value();
+      expect(val).toEqual(dic);
+      expect(dic).toEqual(dic2);
     });
   });
 });
 
 describe(@"map", ^{
   context(@"Array", ^{
-    specify(@"functional", ^{
+    specify(@"functional style", ^{
       arr = _.map(arr, ^(id element, NSUInteger index, NSArray *list) {
         expect([list objectAtIndex:index]).toEqual(element);
         return [element stringByAppendingString:@"."];
@@ -87,18 +112,25 @@ describe(@"map", ^{
       expect(arr).toEqual(_a(@"foo.", @"bar."));
     });
 
-    specify(@"object-oriented", ^{
-      Underscore *u = _(arr).map(^(id element, NSUInteger index, NSArray *list) {
+    specify(@"object-oriented style", ^{
+      arr = _(arr).map(^(id element, NSUInteger index, NSArray *list) {
         expect([list objectAtIndex:index]).toEqual(element);
         return [element stringByAppendingString:@"."];
       });
-      expect(u).toBeKindOf([Underscore class]);
-      expect(u.value()).toEqual(_a(@"foo.", @"bar."));
+      expect(arr).toEqual(_a(@"foo.", @"bar."));
+    });
+
+    specify(@"chained", ^{
+      val = _(arr).chain().map(^(id element, NSUInteger index, NSArray *list) {
+        expect([list objectAtIndex:index]).toEqual(element);
+        return [element stringByAppendingString:@"."];
+      }).value();
+      expect(val).toEqual(_a(@"foo.", @"bar."));
     });
   });
 
   context(@"Set", ^{
-    specify(@"functional", ^{
+    specify(@"functional style", ^{
       arr = _.map(set, ^(id element, NSSet *list) {
         expect([list containsObject:element]).toEqual(YES);
         return [element stringByAppendingString:@"."];
@@ -106,18 +138,25 @@ describe(@"map", ^{
       expect(arr).toEqual(_a(@"foo.", @"bar."));
     });
 
-    specify(@"object-oriented", ^{
-      Underscore *u = _(set).map(^(id element, NSSet *list) {
+    specify(@"object-oriented style", ^{
+      arr = _(set).map(^(id element, NSSet *list) {
         expect([list containsObject:element]).toEqual(YES);
         return [element stringByAppendingString:@"."];
       });
-      expect(u).toBeKindOf([Underscore class]);
-      expect(u.value()).toEqual(_a(@"foo.", @"bar."));
+      expect(arr).toEqual(_a(@"foo.", @"bar."));
+    });
+
+    specify(@"chained", ^{
+      val = _(set).chain().map(^(id element, NSSet *list) {
+        expect([list containsObject:element]).toEqual(YES);
+        return [element stringByAppendingString:@"."];
+      }).value();
+      expect(val).toEqual(_a(@"foo.", @"bar."));
     });
   });
 
   context(@"Dictionary", ^{
-    specify(@"functional", ^{
+    specify(@"functional style", ^{
       arr = _.map(dic, ^(id value, id key, NSDictionary *list) {
         expect([list objectForKey:key]).toEqual(value);
         return [value stringByAppendingString:@"."];
@@ -125,13 +164,20 @@ describe(@"map", ^{
       expect(arr).toEqual(_a(@"bar.", @"qux."));
     });
 
-    specify(@"object-oriented", ^{
-      Underscore *u = _(dic).map(^(id value, id key, NSDictionary *list) {
+    specify(@"object-oriented style", ^{
+      arr = _(dic).map(^(id value, id key, NSDictionary *list) {
         expect([list objectForKey:key]).toEqual(value);
         return [value stringByAppendingString:@"."];
       });
-      expect(u).toBeKindOf([Underscore class]);
-      expect(u.value()).toEqual(_a(@"bar.", @"qux."));
+      expect(arr).toEqual(_a(@"bar.", @"qux."));
+    });
+
+    specify(@"object-oriented style", ^{
+      val = _(dic).chain().map(^(id value, id key, NSDictionary *list) {
+        expect([list objectForKey:key]).toEqual(value);
+        return [value stringByAppendingString:@"."];
+      }).value();
+      expect(val).toEqual(_a(@"bar.", @"qux."));
     });
   });
 });

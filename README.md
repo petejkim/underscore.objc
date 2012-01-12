@@ -100,7 +100,7 @@ Underscore.cocoa is a utility-belt library for Objective-C & Cocoa that provides
 
 ### Chaining
 
-× chain  
+✓ chain  
 ✓ value
 
 ## CREDITS

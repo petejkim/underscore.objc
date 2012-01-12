@@ -21,10 +21,9 @@
 
 #pragma mark - Chaining
 
+@property (nonatomic, readonly) Underscore *(^chain)(void);
 @property (nonatomic, readonly) id(^value)(void);
 
 #pragma mark -
 
 @end
-
-#define _(object) [Underscore underscoreWithObject:(object)]

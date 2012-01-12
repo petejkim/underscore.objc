@@ -9,11 +9,11 @@ describe(@"_", ^{
 });
 
 describe(@"_(obj)", ^{
-  it(@"returns a new instance of Underscore class", ^{
+  it(@"returns a new instance of UnderscoreUnchained class", ^{
     NSArray *array = [NSArray arrayWithObjects:@"foo", @"bar", nil];
-    Underscore * u = _(array);
-    expect(u).toBeKindOf([Underscore class]);
-    expect(u.object).toEqual(array);
+    id u = _(array);
+    expect(u).toBeKindOf([UnderscoreUnchained class]);
+    expect(((UnderscoreUnchained *)u).object).toEqual(array);
   });
 });
 

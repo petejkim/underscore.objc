@@ -115,10 +115,16 @@ static BOOL isBlock(id obj) {
 
 #pragma mark - Chaining
 
-- (id(^)(void))value {
-  __block id object = self.object;
+- (Underscore *(^)(void))chain {
   id block = ^id {
-    return object;
+    return self;
+  };
+  return [[block copy] autorelease];
+}
+
+- (id(^)(void))value {
+  id block = ^id {
+    return self.object;
   };
   return [[block copy] autorelease];
 }
