@@ -13,6 +13,7 @@
 
 @property (nonatomic, readonly) Underscore *(^each)(id iterator);
 @property (nonatomic, readonly) Underscore *(^map)(id iterator);
+@property (nonatomic, readonly) Underscore *(^reduce)(id iterator, id memo);
 @property (nonatomic, readonly) Underscore *(^size)(void);
 
 #pragma mark - Arrays

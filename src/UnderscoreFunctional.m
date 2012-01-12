@@ -21,8 +21,15 @@ UnderscoreFunctional *_;
 }
 
 - (id(^)(id, id))map {
-  id block = ^id(id list, id iterator) {
+  id block = ^id (id list, id iterator) {
     return _(list).map(iterator);
+  };
+  return [[block copy] autorelease];
+}
+
+- (id(^)(id, id, id))reduce {
+  id block = ^id (id list, id iterator, id memo) {
+    return _(list).reduce(iterator, memo);
   };
   return [[block copy] autorelease];
 }

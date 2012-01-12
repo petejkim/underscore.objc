@@ -182,6 +182,77 @@ describe(@"map", ^{
   });
 });
 
+describe(@"reduce", ^{
+  context(@"Array", ^{
+    specify(@"functional style", ^{
+      val = _.reduce(_a(_int(1), _int(2), _int(3)), ^(id memo, id num) {
+        return _int([memo intValue] + [num intValue]);
+      }, _int(0));
+      expect(val).toEqual(_int(6));
+    });
+
+    specify(@"object-oriented style", ^{
+      val = _(_a(_int(1), _int(2), _int(3))).reduce(^(id memo, id num) {
+        return _int([memo intValue] + [num intValue]);
+      }, _int(0));
+      expect(val).toEqual(_int(6));
+    });
+
+    specify(@"chained", ^{
+      val = _(_a(_int(1), _int(2), _int(3))).chain().reduce(^(id memo, id num) {
+        return _int([memo intValue] + [num intValue]);
+      }, _int(0)).value();
+      expect(val).toEqual(_int(6));
+    });
+  });
+
+  context(@"Set", ^{
+    specify(@"functional style", ^{
+      val = _.reduce(_s(_int(1), _int(2), _int(3)), ^(id memo, id num) {
+        return _int([memo intValue] + [num intValue]);
+      }, _int(0));
+      expect(val).toEqual(_int(6));
+    });
+
+    specify(@"object-oriented style", ^{
+      val = _(_s(_int(1), _int(2), _int(3))).reduce(^(id memo, id num) {
+        return _int([memo intValue] + [num intValue]);
+      }, _int(0));
+      expect(val).toEqual(_int(6));
+    });
+
+    specify(@"chained", ^{
+      val = _(_s(_int(1), _int(2), _int(3))).chain().reduce(^(id memo, id num) {
+        return _int([memo intValue] + [num intValue]);
+      }, _int(0)).value();
+      expect(val).toEqual(_int(6));
+    });
+  });
+
+  context(@"Dictionary", ^{
+    specify(@"functional style", ^{
+      val = _.reduce(_d(_kv(@"foo", _int(1)), _kv(@"bar", _int(2)), _kv(@"baz", _int(3))), ^(id memo, id num) {
+        return _int([memo intValue] + [num intValue]);
+      }, _int(0));
+      expect(val).toEqual(_int(6));
+    });
+
+    specify(@"object-oriented style", ^{
+      val = _(_d(_kv(@"foo", _int(1)), _kv(@"bar", _int(2)), _kv(@"baz", _int(3)))).reduce(^(id memo, id num) {
+        return _int([memo intValue] + [num intValue]);
+      }, _int(0));
+      expect(val).toEqual(_int(6));
+    });
+
+    specify(@"chained", ^{
+      val = _(_d(_kv(@"foo", _int(1)), _kv(@"bar", _int(2)), _kv(@"baz", _int(3)))).chain().reduce(^(id memo, id num) {
+        return _int([memo intValue] + [num intValue]);
+      }, _int(0)).value();
+      expect(val).toEqual(_int(6));
+    });
+  });
+});
+
 describe(@"size", ^{
   context(@"Array", ^{
     specify(@"functional style", ^{
@@ -194,7 +265,7 @@ describe(@"size", ^{
 
     specify(@"chained", ^{
       val = _(arr).chain().size().value();
-      expect(val).toEqual([NSNumber numberWithUnsignedInteger:2]);
+      expect(val).toEqual(_uinteger(2));
     });
   });
 
@@ -209,7 +280,7 @@ describe(@"size", ^{
 
     specify(@"chained", ^{
       val = _(set).chain().size().value();
-      expect(val).toEqual([NSNumber numberWithUnsignedInteger:2]);
+      expect(val).toEqual(_uinteger(2));
     });
   });
 
@@ -224,7 +295,7 @@ describe(@"size", ^{
 
     specify(@"chained", ^{
       val = _(dic).chain().size().value();
-      expect(val).toEqual([NSNumber numberWithUnsignedInteger:2]);
+      expect(val).toEqual(_uinteger(2));
     });
   });
 });

@@ -2,7 +2,7 @@
 
 SpecBegin(Underscore_Macros)
 
-describe(@"_a(...)", ^{
+describe(@"_a", ^{
   it(@"creates an array with the objects in the arguments", ^{
     id arr = _a(@"foo", @"bar", @"baz");
     expect(arr).toBeKindOf([NSArray class]);
@@ -10,7 +10,7 @@ describe(@"_a(...)", ^{
   });
 });
 
-describe(@"_ma(...)", ^{
+describe(@"_ma", ^{
   it(@"creates a mutable array with the objects in the arguments", ^{
     id arr = _ma(@"foo", @"bar", @"baz");
     expect(arr).toBeKindOf([NSMutableArray class]);
@@ -18,7 +18,7 @@ describe(@"_ma(...)", ^{
   });
 });
 
-describe(@"_s(...)", ^{
+describe(@"_s", ^{
   it(@"creates a set with the objects in the arguments", ^{
     id set = _s(@"foo", @"bar", @"baz");
     expect(set).toBeKindOf([NSSet class]);
@@ -26,7 +26,7 @@ describe(@"_s(...)", ^{
   });
 });
 
-describe(@"_ms(...)", ^{
+describe(@"_ms", ^{
   it(@"creates a mutable set with the objects in the arguments", ^{
     id set = _ms(@"foo", @"bar", @"baz");
     expect(set).toBeKindOf([NSMutableSet class]);
@@ -34,7 +34,7 @@ describe(@"_ms(...)", ^{
   });
 });
 
-describe(@"_d(...)", ^{
+describe(@"_d", ^{
   it(@"creates a dictionary with the objects in the arguments", ^{
     id dic = _d(@"val1", @"key1", @"val2", @"key2");
     expect(dic).toBeKindOf([NSDictionary class]);
@@ -42,7 +42,7 @@ describe(@"_d(...)", ^{
   });
 });
 
-describe(@"_md(...)", ^{
+describe(@"_md", ^{
   it(@"creates a mutable dictionary with the objects in the arguments", ^{
     id dic = _md(@"val1", @"key1", @"val2", @"key2");
     expect(dic).toBeKindOf([NSMutableDictionary class]);
@@ -50,11 +50,27 @@ describe(@"_md(...)", ^{
   });
 });
 
-describe(@"_kv(key, val)", ^{
+describe(@"_kv", ^{
   it(@"swaps the order of two arguments", ^{
     id dic = _d(_kv(@"key1", @"val1"), _kv(@"key2", @"val2"));
     expect(dic).toBeKindOf([NSDictionary class]);
     expect(dic).toEqual(([NSDictionary dictionaryWithObjectsAndKeys:@"val1", @"key1", @"val2", @"key2", nil]));
+  });
+});
+
+describe(@"_$", ^{
+  it(@"creates a formatted string", ^{
+    id str = _$(@"<%@>", @"foo");
+    expect(str).toBeKindOf([NSString class]);
+    expect(str).toEqual(@"<foo>");
+  });
+});
+
+describe(@"_m$", ^{
+  it(@"creates a formatted mutable string", ^{
+    id str = _m$(@"<%@>", @"foo");
+    expect(str).toBeKindOf([NSMutableString class]);
+    expect(str).toEqual(@"<foo>");
   });
 });
 

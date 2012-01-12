@@ -13,14 +13,15 @@ Underscore.cocoa is a utility-belt library for Objective-C & Cocoa that provides
 ✓ _s, _ms  
 ✓ _d, _md  
 ✓ _kv  
-× _$, _m$  
-× _bool, _int, _float, _char, _double, _integer, _long, _longlong, _short, _uchar, _uint, _uinteger, _ulong, _ulonglong, _ushort
+✓ _$, _m$  
+✓ _bool, _int, _float, _char, _double, _integer, _long, _longlong, _short, _uchar, _uint, _uinteger, _ulong, _ulonglong, _ushort  
+✓ _nonretained, _pointer, _point, _range, _rect, _size
 
 ### Collections (Arrays, Sets, Dictionaries)
 
 ✓ each  
 ✓ map  
-× reduce  
+✓ reduce  
 × reduceRight  
 × find  
 × filter  

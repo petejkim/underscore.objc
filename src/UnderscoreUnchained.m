@@ -39,6 +39,13 @@
   return [[block copy] autorelease];
 }
 
+- (id(^)(id iterator, id memo))reduce {
+  id block = ^id (id iterator, id memo) {
+    return self.chain().reduce(iterator, memo).value();
+  };
+  return [[block copy] autorelease];
+}
+
 - (NSUInteger (^)(void))size {
   id block = ^NSUInteger(void) {
     return [(NSNumber *)(self.chain().size().value()) unsignedIntegerValue];
