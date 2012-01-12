@@ -56,6 +56,7 @@ static BOOL isBlock(id obj) {
         }
       }
     }
+    self.object = nil;
     return self;
   };
   return [[block copy] autorelease];
@@ -124,6 +125,7 @@ static BOOL isBlock(id obj) {
         ((void_NSUInteger)iterator)(i);
       }
     }
+    self.object = nil;
     return self;
   };
   return [[block copy] autorelease];

@@ -28,7 +28,7 @@ describe(@"times", ^{
     val = _(3).chain().times(^(NSUInteger i) {
       [arr addObject:[NSString stringWithFormat:@"%d", (unsigned int)i]];
     }).value();
-    expect(val).toEqual([NSNumber numberWithUnsignedInteger:3]);
+    expect(val).toBeNil();
     expect(arr).toEqual(_a(@"0",@"1",@"2"));
   });
 });

@@ -42,7 +42,7 @@ describe(@"each", ^{
         expect([list objectAtIndex:index]).toEqual(element);
         [arr2 addObject:element];
       }).value();
-      expect(val).toEqual(arr);
+      expect(val).toBeNil();
       expect(arr).toEqual(arr2);
     });
   });
@@ -69,7 +69,7 @@ describe(@"each", ^{
         expect([list containsObject:element]).toEqual(YES);
         [set2 addObject:element];
       }).value();
-      expect(val).toEqual(set);
+      expect(val).toBeNil();
       expect(set).toEqual(set2);
     });
   });
@@ -96,7 +96,7 @@ describe(@"each", ^{
         expect([list objectForKey:key]).toEqual(value);
         [dic2 setObject:value forKey:key];
       }).value();
-      expect(val).toEqual(dic);
+      expect(val).toBeNil();
       expect(dic).toEqual(dic2);
     });
   });
