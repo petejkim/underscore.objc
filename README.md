@@ -40,7 +40,7 @@ Underscore.cocoa is a utility-belt library for Objective-C & Cocoa that provides
 
 ### Arrays
 
-× first  
+✓ first  
 × initial  
 × last  
 × rest  

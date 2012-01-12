@@ -12,6 +12,8 @@ UnderscoreFunctional *_;
   }
 }
 
+#pragma mark - Collections
+
 - (id(^)(id, id))each {
   id block = ^id(id list, id iterator) {
     return _(list).each(iterator).value();
@@ -25,5 +27,23 @@ UnderscoreFunctional *_;
   };
   return [[block copy] autorelease];
 }
+
+#pragma mark - Arrays
+
+- (id(^)(NSArray *))first {
+  id block = ^id(NSArray *array) {
+    return _(array).first().value();
+  };
+  return [[block copy] autorelease];
+}
+
+- (NSArray *(^)(NSArray *, NSUInteger))firstN {
+  id block = ^id(NSArray *array, NSUInteger n) {
+    return _(array).firstN(n).value();
+  };
+  return [[block copy] autorelease];
+}
+
+#pragma mark -
 
 @end

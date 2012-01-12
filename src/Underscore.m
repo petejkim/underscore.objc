@@ -33,13 +33,7 @@ static BOOL isBlock(id obj) {
   return [[[self alloc] initWithObject:object] autorelease];
 }
 
-- (id(^)(void))value {
-  __block id object = self.object;
-  id block = ^id {
-    return object;
-  };
-  return [[block copy] autorelease];
-}
+#pragma mark - Collections
 
 - (Underscore *(^)(id))each {
   __block id list = self.object;
@@ -92,5 +86,43 @@ static BOOL isBlock(id obj) {
   };
   return [[block copy] autorelease];
 }
+
+#pragma mark - Arrays
+
+- (Underscore *(^)(void))first {
+  id block = ^Underscore *{
+    if([self.object isKindOfClass:[NSArray class]]) {
+      self.object = [self.object objectAtIndex:0];
+    } else {
+      self.object = nil;
+    }
+    return self;
+  };
+  return [[block copy] autorelease];
+}
+
+- (Underscore *(^)(NSUInteger))firstN {
+  id block = ^Underscore *(NSUInteger n) {
+    if([self.object isKindOfClass:[NSArray class]]) {
+      self.object = [self.object subarrayWithRange:NSMakeRange(0, n)];
+    } else {
+      self.object = [NSArray array];
+    }
+    return self;
+  };
+  return [[block copy] autorelease];
+}
+
+#pragma mark - Chaining
+
+- (id(^)(void))value {
+  __block id object = self.object;
+  id block = ^id {
+    return object;
+  };
+  return [[block copy] autorelease];
+}
+
+#pragma mark -
 
 @end
