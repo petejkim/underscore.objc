@@ -172,12 +172,59 @@ describe(@"map", ^{
       expect(arr).toEqual(_a(@"bar.", @"qux."));
     });
 
-    specify(@"object-oriented style", ^{
+    specify(@"chained", ^{
       val = _(dic).chain().map(^(id value, id key, NSDictionary *list) {
         expect([list objectForKey:key]).toEqual(value);
         return [value stringByAppendingString:@"."];
       }).value();
       expect(val).toEqual(_a(@"bar.", @"qux."));
+    });
+  });
+});
+
+describe(@"size", ^{
+  context(@"Array", ^{
+    specify(@"functional style", ^{
+      expect(_.size(arr)).toEqual(2);
+    });
+
+    specify(@"object-oriented style", ^{
+      expect(_(arr).size()).toEqual(2);
+    });
+
+    specify(@"chained", ^{
+      val = _(arr).chain().size().value();
+      expect(val).toEqual([NSNumber numberWithUnsignedInteger:2]);
+    });
+  });
+
+  context(@"Set", ^{
+    specify(@"functional style", ^{
+      expect(_.size(set)).toEqual(2);
+    });
+
+    specify(@"object-oriented style", ^{
+      expect(_(set).size()).toEqual(2);
+    });
+
+    specify(@"chained", ^{
+      val = _(set).chain().size().value();
+      expect(val).toEqual([NSNumber numberWithUnsignedInteger:2]);
+    });
+  });
+
+  context(@"Dictionary", ^{
+    specify(@"functional style", ^{
+      expect(_.size(dic)).toEqual(2);
+    });
+
+    specify(@"object-oriented style", ^{
+      expect(_(dic).size()).toEqual(2);
+    });
+
+    specify(@"chained", ^{
+      val = _(dic).chain().size().value();
+      expect(val).toEqual([NSNumber numberWithUnsignedInteger:2]);
     });
   });
 });

@@ -27,6 +27,13 @@ UnderscoreFunctional *_;
   return [[block copy] autorelease];
 }
 
+- (NSUInteger (^)(id))size {
+  id block = ^NSUInteger(id list) {
+    return _(list).size();
+  };
+  return [[block copy] autorelease];
+}
+
 #pragma mark - Arrays
 
 - (id(^)(NSArray *))first {

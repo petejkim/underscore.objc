@@ -17,6 +17,7 @@
 
 @property (nonatomic, readonly) void(^each)(id iterator);
 @property (nonatomic, readonly) NSArray *(^map)(id iterator);
+@property (nonatomic, readonly) NSUInteger(^size)(void);
 
 #pragma mark - Arrays
 

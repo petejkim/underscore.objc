@@ -36,7 +36,7 @@ Underscore.cocoa is a utility-belt library for Objective-C & Cocoa that provides
 × sortedIndex  
 × shuffle  
 × toArray  
-× size
+✓ size
 
 ### Arrays
 

@@ -37,7 +37,7 @@ static BOOL isBlock(id obj) {
 #pragma mark - Collections
 
 - (Underscore *(^)(id))each {
-  __block id list = self.object;
+  id list = self.object;
   id block = ^Underscore *(id iterator) {
     if(list && iterator) {
       if([list isKindOfClass:[NSArray class]]) {
@@ -63,7 +63,7 @@ static BOOL isBlock(id obj) {
 }
 
 - (Underscore *(^)(id))map {
-  __block id list = self.object;
+  id list = self.object;
   id block = ^Underscore *(id iterator) {
     if(list && iterator) {
       NSMutableArray *resultArray = [NSMutableArray arrayWithCapacity:[list count]];
@@ -89,10 +89,23 @@ static BOOL isBlock(id obj) {
   return [[block copy] autorelease];
 }
 
+- (Underscore *(^)(void))size {
+  id list = self.object;
+  id block = ^Underscore * {
+    if([list isKindOfClass:[NSArray class]] || [list isKindOfClass:[NSSet class]] || [list isKindOfClass:[NSDictionary class]]) {
+      self.object = [NSNumber numberWithUnsignedInteger:[list count]];
+    } else {
+      self.object = nil;
+    }
+    return self;
+  };
+  return [[block copy] autorelease];
+}
+
 #pragma mark - Arrays
 
 - (Underscore *(^)(void))first {
-  id block = ^Underscore *{
+  id block = ^Underscore * {
     if([self.object isKindOfClass:[NSArray class]]) {
       self.object = [self.object objectAtIndex:0];
     } else {

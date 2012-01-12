@@ -39,6 +39,13 @@
   return [[block copy] autorelease];
 }
 
+- (NSUInteger (^)(void))size {
+  id block = ^NSUInteger(void) {
+    return [(NSNumber *)(self.chain().size().value()) unsignedIntegerValue];
+  };
+  return [[block copy] autorelease];
+}
+
 #pragma mark - Arrays
 
 - (id(^)(void))first {

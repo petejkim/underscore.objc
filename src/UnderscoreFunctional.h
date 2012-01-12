@@ -10,6 +10,7 @@
 
 @property (nonatomic, readonly) void(^each)(id list, id iterator);
 @property (nonatomic, readonly) id(^map)(id list, id iterator);
+@property (nonatomic, readonly) NSUInteger(^size)(id list);
 
 #pragma mark - Arrays
 
