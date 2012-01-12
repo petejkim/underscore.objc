@@ -128,7 +128,7 @@ static BOOL isBlock(id obj) {
 
 - (Underscore *(^)(void))first {
   id block = ^Underscore * {
-    if([self.object isKindOfClass:[NSArray class]]) {
+    if([self.object isKindOfClass:[NSArray class]] && [self.object count] > 0) {
       self.object = [self.object objectAtIndex:0];
     } else {
       self.object = nil;
@@ -138,13 +138,105 @@ static BOOL isBlock(id obj) {
   return [[block copy] autorelease];
 }
 
+- (Underscore *(^)(void))last {
+  id block = ^Underscore * {
+    if([self.object isKindOfClass:[NSArray class]] && [self.object count] > 0) {
+      self.object = [self.object lastObject];
+    } else {
+      self.object = nil;
+    }
+    return self;
+  };
+  return [[block copy] autorelease];
+}
+
+- (Underscore *(^)(void))initial {
+  id block = ^Underscore * {
+    if([self.object isKindOfClass:[NSArray class]]) {
+      NSUInteger size = [self.object count];
+      if(size > 1) {
+        self.object = [self.object subarrayWithRange:NSMakeRange(0, size - 1)];
+        return self;
+      }
+    }
+    self.object = [NSArray array];
+    return self;
+  };
+  return [[block copy] autorelease];
+}
+
+- (Underscore *(^)(void))rest {
+  id block = ^Underscore * {
+    if([self.object isKindOfClass:[NSArray class]]) {
+      NSUInteger size = [self.object count];
+      if(size > 1) {
+        self.object = [self.object subarrayWithRange:NSMakeRange(1, size - 1)];
+        return self;
+      }
+    }
+    self.object = [NSArray array];
+    return self;
+  };
+  return [[block copy] autorelease];
+}
+
+- (Underscore *(^)(NSUInteger))initialN {
+  id block = ^Underscore *(NSUInteger n) {
+    if([self.object isKindOfClass:[NSArray class]]) {
+      NSUInteger size = [self.object count];
+      if(size > n) {
+        self.object = [self.object subarrayWithRange:NSMakeRange(0, size - n)];
+        return self;
+      }
+    }
+    self.object = [NSArray array];
+    return self;
+  };
+  return [[block copy] autorelease];
+}
+
+- (Underscore *(^)(NSUInteger))restN {
+  id block = ^Underscore *(NSUInteger n) {
+    if([self.object isKindOfClass:[NSArray class]]) {
+      NSUInteger size = [self.object count];
+      if(size > n) {
+        self.object = [self.object subarrayWithRange:NSMakeRange(n, size - n)];
+        return self;
+      }
+    }
+    self.object = [NSArray array];
+    return self;
+  };
+  return [[block copy] autorelease];
+}
+
 - (Underscore *(^)(NSUInteger))firstN {
   id block = ^Underscore *(NSUInteger n) {
     if([self.object isKindOfClass:[NSArray class]]) {
-      self.object = [self.object subarrayWithRange:NSMakeRange(0, n)];
-    } else {
-      self.object = [NSArray array];
+      NSUInteger size = [self.object count];
+      if(size > 0) {
+        self.object = [self.object subarrayWithRange:NSMakeRange(0, MIN(n, size))];
+        return self;
+      }
     }
+    self.object = [NSArray array];
+    return self;
+  };
+  return [[block copy] autorelease];
+}
+
+- (Underscore *(^)(NSUInteger))lastN {
+  id block = ^Underscore *(NSUInteger n) {
+    if([self.object isKindOfClass:[NSArray class]]) {
+      NSUInteger size = [self.object count];
+      if(size > 0) {
+        NSUInteger startIndex = MAX((NSInteger)[self.object count] - (NSInteger)n, 0);
+        NSUInteger length = MIN(n, size - startIndex);
+        self.object = [self.object subarrayWithRange:NSMakeRange(startIndex, length)];
+        return self;
+      }
+    }
+    self.object = [NSArray array];
     return self;
   };
   return [[block copy] autorelease];

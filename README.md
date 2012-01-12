@@ -42,12 +42,15 @@ Underscore.cocoa is a utility-belt library for Objective-C & Cocoa that provides
 ### Arrays
 
 ✓ first  
-× initial  
-× last  
-× rest  
+✓ firstN  
+✓ initial  
+✓ initialN  
+✓ last  
+✓ lastN  
+✓ rest  
+✓ restN  
 × compact  
 × flatten  
-× without  
 × union  
 × intersection  
 × difference  

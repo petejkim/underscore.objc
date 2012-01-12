@@ -50,9 +50,51 @@ UnderscoreFunctional *_;
   return [[block copy] autorelease];
 }
 
+- (id(^)(NSArray *))last {
+  id block = ^id(NSArray *array) {
+    return _(array).last();
+  };
+  return [[block copy] autorelease];
+}
+
+- (NSArray *(^)(NSArray *))initial {
+  id block = ^id(NSArray *array) {
+    return _(array).initial();
+  };
+  return [[block copy] autorelease];
+}
+
+- (NSArray *(^)(NSArray *))rest {
+  id block = ^id(NSArray *array) {
+    return _(array).rest();
+  };
+  return [[block copy] autorelease];
+}
+
+- (NSArray *(^)(NSArray *, NSUInteger))initialN {
+  id block = ^id(NSArray *array, NSUInteger n) {
+    return _(array).initialN(n);
+  };
+  return [[block copy] autorelease];
+}
+
+- (NSArray *(^)(NSArray *, NSUInteger))restN {
+  id block = ^id(NSArray *array, NSUInteger n) {
+    return _(array).restN(n);
+  };
+  return [[block copy] autorelease];
+}
+
 - (NSArray *(^)(NSArray *, NSUInteger))firstN {
   id block = ^id(NSArray *array, NSUInteger n) {
     return _(array).firstN(n);
+  };
+  return [[block copy] autorelease];
+}
+
+- (NSArray *(^)(NSArray *, NSUInteger))lastN {
+  id block = ^id(NSArray *array, NSUInteger n) {
+    return _(array).lastN(n);
   };
   return [[block copy] autorelease];
 }

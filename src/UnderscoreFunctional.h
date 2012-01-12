@@ -16,7 +16,13 @@
 #pragma mark - Arrays
 
 @property (nonatomic, readonly) id(^first)(NSArray *array);
+@property (nonatomic, readonly) id(^last)(NSArray *array);
+@property (nonatomic, readonly) NSArray *(^initial)(NSArray *array);
+@property (nonatomic, readonly) NSArray *(^rest)(NSArray *array);
+@property (nonatomic, readonly) NSArray *(^initialN)(NSArray *array, NSUInteger n);
+@property (nonatomic, readonly) NSArray *(^restN)(NSArray *array, NSUInteger n);
 @property (nonatomic, readonly) NSArray *(^firstN)(NSArray *array, NSUInteger n);
+@property (nonatomic, readonly) NSArray *(^lastN)(NSArray *array, NSUInteger n);
 
 #pragma mark - Utility
 

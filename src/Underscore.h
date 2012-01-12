@@ -19,7 +19,13 @@
 #pragma mark - Arrays
 
 @property (nonatomic, readonly) Underscore *(^first)(void);
+@property (nonatomic, readonly) Underscore *(^last)(void);
+@property (nonatomic, readonly) Underscore *(^initial)(void);
+@property (nonatomic, readonly) Underscore *(^rest)(void);
+@property (nonatomic, readonly) Underscore *(^initialN)(NSUInteger n);
+@property (nonatomic, readonly) Underscore *(^restN)(NSUInteger n);
 @property (nonatomic, readonly) Underscore *(^firstN)(NSUInteger n);
+@property (nonatomic, readonly) Underscore *(^lastN)(NSUInteger n);
 
 #pragma mark - Utility
 

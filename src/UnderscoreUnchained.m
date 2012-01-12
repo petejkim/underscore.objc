@@ -62,9 +62,51 @@
   return [[block copy] autorelease];
 }
 
+- (id(^)(void))last {
+  id block = ^id {
+    return self.chain().last().value();
+  };
+  return [[block copy] autorelease];
+}
+
+- (NSArray *(^)(void))initial {
+  id block = ^NSArray * {
+    return self.chain().initial().value();
+  };
+  return [[block copy] autorelease];
+}
+
+- (NSArray *(^)(void))rest {
+  id block = ^NSArray * {
+    return self.chain().rest().value();
+  };
+  return [[block copy] autorelease];
+}
+
+- (NSArray *(^)(NSUInteger))initialN {
+  id block = ^NSArray *(NSUInteger n) {
+    return self.chain().initialN(n).value();
+  };
+  return [[block copy] autorelease];
+}
+
+- (NSArray *(^)(NSUInteger))restN {
+  id block = ^NSArray *(NSUInteger n) {
+    return self.chain().restN(n).value();
+  };
+  return [[block copy] autorelease];
+}
+
 - (NSArray *(^)(NSUInteger))firstN {
   id block = ^NSArray *(NSUInteger n) {
     return self.chain().firstN(n).value();
+  };
+  return [[block copy] autorelease];
+}
+
+- (NSArray *(^)(NSUInteger))lastN {
+  id block = ^NSArray *(NSUInteger n) {
+    return self.chain().lastN(n).value();
   };
   return [[block copy] autorelease];
 }
