@@ -2,6 +2,8 @@
 
 Underscore.cocoa is a utility-belt library for Objective-C & Cocoa that provides a lot of the functional programming support that you would expect in languages like Ruby, but without extending any of the built-in Foundation classes. It is heavily inspired by [Underscore.js](http://documentcloud.github.com/underscore) and aims to emulate the original syntax as close as possible.
 
+Underscore.cocoa requires Mac OS X 10.6+ / iOS 4.0+, due to the heavy use of blocks. You may be able to compile and use the library on Mac OS X 10.5+ / iOS 3.0+ with the help of [PLBlocks](http://code.google.com/p/plblocks/), but I have not tested that myself.
+
 # WORK IN PROGRESS
 
 ✓ : Implemented
@@ -10,15 +12,15 @@ Underscore.cocoa is a utility-belt library for Objective-C & Cocoa that provides
 ### Macros
 
 ```
-✓ _a               = × _arr
-✓ _ma              = × _marr
-✓ _s               = × _str
-✓ _ms              = × _mstr
-✓ _d               = × _dict
-✓ _md              = × _mdict
+✓ _a               = ✓ _arr
+✓ _ma              = ✓ _marr
+✓ _s               = ✓ _str
+✓ _ms              = ✓ _mstr
+✓ _d               = ✓ _dict
+✓ _md              = ✓ _mdict
 ✓ _kv
-✓ _$               = × _str
-✓ _m$              = × _mstr
+✓ _$               = ✓ _str
+✓ _m$              = ✓ _mstr
 ✓ _bool
 ✓ _int
 ✓ _float
@@ -26,15 +28,15 @@ Underscore.cocoa is a utility-belt library for Objective-C & Cocoa that provides
 ✓ _double
 ✓ _integer
 ✓ _long
-✓ _longlong        = × _longLong
+✓ _longlong        = ✓ _longLong
 ✓ _short
-✓ _uchar           = × _unsignedChar
-✓ _uint            = × _unsignedInt
-✓ _uinteger        = × _unsignedInteger
-✓ _ulong           = × _unsignedLong
-✓ _ulonglong       = × _unsignedLongLong
-✓ _ushort          = × _unsignedShort
-✓ _nonretained     = × _nonretainedObject
+✓ _uchar           = ✓ _unsignedChar
+✓ _uint            = ✓ _unsignedInt
+✓ _uinteger        = ✓ _unsignedInteger
+✓ _ulong           = ✓ _unsignedLong
+✓ _ulonglong       = ✓ _unsignedLongLong
+✓ _ushort          = ✓ _unsignedShort
+✓ _nonretained     = ✓ _nonretainedObject
 ✓ _pointer
 ✓ _point
 ✓ _range

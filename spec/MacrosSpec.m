@@ -74,4 +74,68 @@ describe(@"_m$", ^{
   });
 });
 
+describe(@"_arr", ^{
+  it(@"is an alias for _a", ^{
+    id arr = _arr(@"foo", @"bar");
+    expect(arr).toBeKindOf([NSArray class]);
+    expect(arr).toEqual(_a(@"foo", @"bar"));
+  });
+});
+
+describe(@"_marr", ^{
+  it(@"is an alias for _ma", ^{
+    id arr = _marr(@"foo", @"bar");
+    expect(arr).toBeKindOf([NSMutableArray class]);
+    expect(arr).toEqual(_ma(@"foo", @"bar"));
+  });
+});
+
+describe(@"_set", ^{
+  it(@"is an alias for _s", ^{
+    id set = _set(@"foo", @"bar");
+    expect(set).toBeKindOf([NSSet class]);
+    expect(set).toEqual(_s(@"foo", @"bar"));
+  });
+});
+
+describe(@"_mset", ^{
+  it(@"is an alias for _ms", ^{
+    id set = _mset(@"foo", @"bar");
+    expect(set).toBeKindOf([NSMutableSet class]);
+    expect(set).toEqual(_ms(@"foo", @"bar"));
+  });
+});
+
+describe(@"_dict", ^{
+  it(@"is an alias for _d", ^{
+    id dic = _dict(@"val1", @"key1", @"val2", @"key2");
+    expect(dic).toBeKindOf([NSDictionary class]);
+    expect(dic).toEqual(_d(@"val1", @"key1", @"val2", @"key2"));
+  });
+});
+
+describe(@"_mdict", ^{
+  it(@"is an alias for _md", ^{
+    id dic = _mdict(@"val1", @"key1", @"val2", @"key2");
+    expect(dic).toBeKindOf([NSMutableDictionary class]);
+    expect(dic).toEqual(_md(@"val1", @"key1", @"val2", @"key2"));
+  });
+});
+
+describe(@"_str", ^{
+  it(@"is an alias for _$", ^{
+    id str = _str(@"<%@>", @"foo");
+    expect(str).toBeKindOf([NSString class]);
+    expect(str).toEqual(_$(@"<%@>", @"foo"));
+  });
+});
+
+describe(@"_mstr", ^{
+  it(@"is an alias for _m$", ^{
+    id str = _mstr(@"<%@>", @"foo");
+    expect(str).toBeKindOf([NSMutableString class]);
+    expect(str).toEqual(_m$(@"<%@>", @"foo"));
+  });
+});
+
 SpecEnd
