@@ -186,21 +186,21 @@ describe(@"reduce", ^{
   context(@"Array", ^{
     specify(@"functional style", ^{
       val = _.reduce(_a(_int(1), _int(2), _int(3)), ^(id memo, id num) {
-        return _int([memo intValue] + [num intValue]);
+        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
       }, _int(0));
       expect(val).toEqual(_int(6));
     });
 
     specify(@"object-oriented style", ^{
       val = _(_a(_int(1), _int(2), _int(3))).reduce(^(id memo, id num) {
-        return _int([memo intValue] + [num intValue]);
+        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
       }, _int(0));
       expect(val).toEqual(_int(6));
     });
 
     specify(@"chained", ^{
       val = _(_a(_int(1), _int(2), _int(3))).chain().reduce(^(id memo, id num) {
-        return _int([memo intValue] + [num intValue]);
+        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
       }, _int(0)).value();
       expect(val).toEqual(_int(6));
     });
@@ -209,21 +209,21 @@ describe(@"reduce", ^{
   context(@"Set", ^{
     specify(@"functional style", ^{
       val = _.reduce(_s(_int(1), _int(2), _int(3)), ^(id memo, id num) {
-        return _int([memo intValue] + [num intValue]);
+        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
       }, _int(0));
       expect(val).toEqual(_int(6));
     });
 
     specify(@"object-oriented style", ^{
       val = _(_s(_int(1), _int(2), _int(3))).reduce(^(id memo, id num) {
-        return _int([memo intValue] + [num intValue]);
+        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
       }, _int(0));
       expect(val).toEqual(_int(6));
     });
 
     specify(@"chained", ^{
       val = _(_s(_int(1), _int(2), _int(3))).chain().reduce(^(id memo, id num) {
-        return _int([memo intValue] + [num intValue]);
+        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
       }, _int(0)).value();
       expect(val).toEqual(_int(6));
     });
@@ -232,21 +232,21 @@ describe(@"reduce", ^{
   context(@"Dictionary", ^{
     specify(@"functional style", ^{
       val = _.reduce(_d(_kv(@"foo", _int(1)), _kv(@"bar", _int(2)), _kv(@"baz", _int(3))), ^(id memo, id num) {
-        return _int([memo intValue] + [num intValue]);
+        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
       }, _int(0));
       expect(val).toEqual(_int(6));
     });
 
     specify(@"object-oriented style", ^{
       val = _(_d(_kv(@"foo", _int(1)), _kv(@"bar", _int(2)), _kv(@"baz", _int(3)))).reduce(^(id memo, id num) {
-        return _int([memo intValue] + [num intValue]);
+        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
       }, _int(0));
       expect(val).toEqual(_int(6));
     });
 
     specify(@"chained", ^{
       val = _(_d(_kv(@"foo", _int(1)), _kv(@"bar", _int(2)), _kv(@"baz", _int(3)))).chain().reduce(^(id memo, id num) {
-        return _int([memo intValue] + [num intValue]);
+        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
       }, _int(0)).value();
       expect(val).toEqual(_int(6));
     });

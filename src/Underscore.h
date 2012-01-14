@@ -35,6 +35,28 @@
 
 @property (nonatomic, readonly) Underscore *(^chain)(void);
 @property (nonatomic, readonly) id(^value)(void);
+@property (nonatomic, readonly) BOOL(^boolValue)(void);
+@property (nonatomic, readonly) char(^charValue)(void);
+@property (nonatomic, readonly) double(^doubleValue)(void);
+@property (nonatomic, readonly) float(^floatValue)(void);
+@property (nonatomic, readonly) int(^intValue)(void);
+@property (nonatomic, readonly) NSInteger(^integerValue)(void);
+@property (nonatomic, readonly) long long(^longlongValue)(void);
+@property (nonatomic, readonly) long long(^longLongValue)(void);
+@property (nonatomic, readonly) long(^longValue)(void);
+@property (nonatomic, readonly) short(^shortValue)(void);
+@property (nonatomic, readonly) unsigned char(^ucharValue)(void);
+@property (nonatomic, readonly) unsigned char(^unsignedCharValue)(void);
+@property (nonatomic, readonly) NSUInteger(^uintegerValue)(void);
+@property (nonatomic, readonly) NSUInteger(^unsignedIntegerValue)(void);
+@property (nonatomic, readonly) unsigned int(^uintValue)(void);
+@property (nonatomic, readonly) unsigned int(^unsignedIntValue)(void);
+@property (nonatomic, readonly) unsigned long long(^ulonglongValue)(void);
+@property (nonatomic, readonly) unsigned long long(^unsignedLongLongValue)(void);
+@property (nonatomic, readonly) unsigned long(^ulongValue)(void);
+@property (nonatomic, readonly) unsigned long(^unsignedLongValue)(void);
+@property (nonatomic, readonly) unsigned short(^ushortValue)(void);
+@property (nonatomic, readonly) unsigned short(^unsignedShortValue)(void);
 
 #pragma mark -
 

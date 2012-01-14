@@ -247,7 +247,7 @@ static BOOL isBlock(id obj) {
 - (Underscore *(^)(id))times {
   id block = ^Underscore *(id iterator) {
     if([self.object isKindOfClass:[NSNumber class]]) {
-      NSUInteger n = [self.object unsignedIntegerValue];
+      NSUInteger n = [(NSNumber *)self.object unsignedIntegerValue];
       for(NSUInteger i = 0; i < n; i ++) {
         ((void_NSUInteger)iterator)(i);
       }
@@ -272,6 +272,184 @@ static BOOL isBlock(id obj) {
     return self.object;
   };
   return [[block copy] autorelease];
+}
+
+- (BOOL(^)(void))boolValue {
+  id block = ^BOOL {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object boolValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (char(^)(void))charValue {
+  id block = ^char {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object charValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (double(^)(void))doubleValue {
+  id block = ^double {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object doubleValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (float(^)(void))floatValue {
+  id block = ^float {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object floatValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (int(^)(void))intValue {
+  id block = ^int {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object intValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (NSInteger(^)(void))integerValue {
+  id block = ^NSInteger {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object integerValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (long long(^)(void))longlongValue {
+  id block = ^long long {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object longLongValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (long long(^)(void))longLongValue {
+  return [self longlongValue];
+}
+
+- (long(^)(void))longValue {
+  id block = ^long {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object longValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (short(^)(void))shortValue {
+  id block = ^short {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object shortValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (unsigned char(^)(void))ucharValue {
+  id block = ^unsigned char {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object unsignedCharValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (unsigned char(^)(void))unsignedCharValue {
+  return [self ucharValue];
+}
+
+- (NSUInteger(^)(void))uintegerValue {
+  id block = ^NSUInteger {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object unsignedIntegerValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (NSUInteger(^)(void))unsignedIntegerValue {
+  return [self uintegerValue];
+}
+
+- (unsigned int(^)(void))uintValue {
+  id block = ^unsigned int {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object unsignedIntValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (unsigned int(^)(void))unsignedIntValue {
+  return [self uintValue];
+}
+
+- (unsigned long long(^)(void))ulonglongValue {
+  id block = ^unsigned long long {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object unsignedLongLongValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (unsigned long long(^)(void))unsignedLongLongValue {
+  return [self ulonglongValue];
+}
+
+- (unsigned long(^)(void))ulongValue {
+  id block = ^unsigned long {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object unsignedLongValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (unsigned long(^)(void))unsignedLongValue {
+  return [self ulongValue];
+}
+
+- (unsigned short(^)(void))ushortValue {
+  id block = ^unsigned short {
+    if([self.object isKindOfClass:[NSNumber class]]) {
+      return [(NSNumber *)self.object unsignedShortValue];
+    }
+    return NO;
+  };
+  return [[block copy] autorelease];
+}
+
+- (unsigned short(^)(void))unsignedShortValue {
+  return [self ushortValue];
 }
 
 #pragma mark -

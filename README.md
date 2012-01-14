@@ -144,28 +144,21 @@ Underscore.cocoa is a utility-belt library for Objective-C & Cocoa that provides
 ```
 ✓ chain
 ✓ value
-× boolValue
-× charValue
-× decimalValue
-× doubleValue
-× floatValue
-× intValue
-× integerValue
-× longlongValue    = × longLongValue
-× longValue
-× shortValue
-× ucharValue       = × unsignedCharValue
-× uintegerValue    = × unsignedIntegerValue
-× uintValue        = × unsignedIntValue
-× ulonglongValue   = × unsignedLongLongValue
-× ulongValue       = × unsignedLongValue
-× ushortValue      = × unsignedShortValue
-× nonretainedValue = × nonretainedObjectValue
-× pointValue
-× pointerValue
-× rangeValue
-× rectValue
-× sizeValue
+✓ boolValue
+✓ charValue
+✓ doubleValue
+✓ floatValue
+✓ intValue
+✓ integerValue
+✓ longlongValue    = ✓ longLongValue
+✓ longValue
+✓ shortValue
+✓ ucharValue       = ✓ unsignedCharValue
+✓ uintegerValue    = ✓ unsignedIntegerValue
+✓ uintValue        = ✓ unsignedIntValue
+✓ ulonglongValue   = ✓ unsignedLongLongValue
+✓ ulongValue       = ✓ unsignedLongValue
+✓ ushortValue      = ✓ unsignedShortValue
 ```
 
 ## CREDITS
