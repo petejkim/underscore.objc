@@ -18,8 +18,8 @@ A light-weight TDD / BDD framework for Objective-C & Cocoa.
 Use [CocoaPods](http://github.com/CocoaPods/CocoaPods)
 
 ```ruby
-dependency 'Specta',      '~> 0.1.1'
-# dependency 'Expecta',     '~> 0.1.1'   # expecta matchers
+dependency 'Specta',      '~> 0.1.4'
+# dependency 'Expecta',     '~> 0.1.3'   # expecta matchers
 # dependency 'OCHamcrest',  '~> 1.6'     # hamcrest matchers
 # dependency 'OCMock',      '~> 1.77.1'  # OCMock
 ```
@@ -71,6 +71,12 @@ describe(@"Thing", ^{
     });
   });
 
+  pending(@"pending example");
+
+  pending(@"another pending example", ^{
+    // ...
+  });
+
   afterEach(^{
     // This is run after each example.
   });
@@ -87,11 +93,11 @@ SpecEnd
 * `beforeEach` and `afterEach` are also aliased as `before` and `after` respectively.
 * `describe` is also aliased as `context`.
 * `it` is also aliased as `example` and `specify`.
+* Use `pending` or prepend `x` to `describe`, `context`, `example, `it`, and `specify` to mark examples or groups as pending.
 * Do `#define SPT_CEDAR_SYNTAX` if you prefer to write `SPEC_BEGIN` and `SPEC_END` instead of `SpecBegin` and `SpecEnd`.
 
 ### FEATURES COMING SOON
 
-* Pending Specs
 * Shared Examples
 
 ### CONTRIBUTION GUIDELINES

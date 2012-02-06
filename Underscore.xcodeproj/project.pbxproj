@@ -43,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E9175A8814DFE027006C61CF /* SpectaTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpectaTypes.h; sourceTree = "<group>"; };
+		E9175A8914DFE027006C61CF /* SPTSenTestInvocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTSenTestInvocation.h; sourceTree = "<group>"; };
 		E93A1EA014BE8BA500040E7D /* CollectionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionsSpec.m; sourceTree = "<group>"; };
 		E93A1EA314BE8BF100040E7D /* MacrosSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MacrosSpec.m; sourceTree = "<group>"; };
 		E9978FB414BF166A00E159C0 /* ArraysSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArraysSpec.m; sourceTree = "<group>"; };
@@ -262,6 +264,8 @@
 				E9BDBB2C14BE5E7D00102FB5 /* SPTExampleGroup.h */,
 				E9BDBB2D14BE5E7D00102FB5 /* SPTSenTestCase.h */,
 				E9BDBB2E14BE5E7D00102FB5 /* SPTSpec.h */,
+				E9175A8814DFE027006C61CF /* SpectaTypes.h */,
+				E9175A8914DFE027006C61CF /* SPTSenTestInvocation.h */,
 			);
 			path = specta;
 			sourceTree = "<group>";

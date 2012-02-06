@@ -1,8 +1,8 @@
 #import <SenTestingKit/SenTestingKit.h>
-#import "SpectaSupport.h"
 
 @class
   SPTSpec
+, SPTExample
 ;
 
 @interface SPTSenTestCase : SenTestCase {
@@ -14,10 +14,10 @@
 @property (nonatomic, assign) SenTestCaseRun *SPT_run;
 
 + (SPTSpec *)SPT_spec;
-+ (SPTSenTestCase *)SPT_singleton;
-- (void)SPT_defineSpecBefore;
-- (void)SPT_defineSpecAfter;
+- (void)SPT_setCurrentSpecWithFileName:(const char *)fileName lineNumber:(NSUInteger)lineNumber;
 - (void)SPT_defineSpec;
+- (void)SPT_unsetCurrentSpec;
 - (void)SPT_runExampleAtIndex:(NSUInteger)index;
+- (SPTExample *)SPT_getCurrentExample;
 
 @end
