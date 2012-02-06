@@ -99,6 +99,13 @@ UnderscoreFunctional *_;
   return [[block copy] autorelease];
 }
 
+- (NSArray *(^)(NSArray *))compact {
+  id block = ^id(NSArray *array) {
+    return _(array).compact();
+  };
+  return [[block copy] autorelease];
+}
+
 #pragma mark - Utility
 
 - (void(^)(NSUInteger, id))times {

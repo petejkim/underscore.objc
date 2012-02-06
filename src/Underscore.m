@@ -242,6 +242,24 @@ static BOOL isBlock(id obj) {
   return [[block copy] autorelease];
 }
 
+- (Underscore *(^)(void))compact {
+  id block = ^Underscore * {
+    if([self.object isKindOfClass:[NSArray class]]) {
+      NSMutableArray *resultArray = [NSMutableArray array];
+      for(id obj in self.object) {
+        if(obj != [NSNull null]) {
+          [resultArray addObject:obj];
+        }
+      }
+      self.object = resultArray;
+      return self;
+    }
+    self.object = [NSArray array];
+    return self;
+  };
+  return [[block copy] autorelease];
+}
+
 #pragma mark - Utility
 
 - (Underscore *(^)(id))times {

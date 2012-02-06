@@ -166,4 +166,23 @@ describe(@"restN", ^{
   });
 });
 
+// Returns a copy of the array with all [NSNull null] objects removed. Note: The JS counterpart removes all falsy values, not just nulls.
+describe(@"compact", ^{
+  before(^{
+    arr = _a(@"foo", @"bar", [NSNull null], @"baz", [NSNull null], @"qux");
+  });
+
+  specify(@"functional style", ^{
+    expect(_.compact(arr)).toEqual(_a(@"foo", @"bar", @"baz", @"qux"));
+  });
+
+  specify(@"object-oriented style", ^{
+    expect(_(arr).compact()).toEqual(_a(@"foo", @"bar", @"baz", @"qux"));
+  });
+
+  specify(@"chained", ^{
+    expect(_(arr).chain().compact().value()).toEqual(_a(@"foo", @"bar", @"baz", @"qux"));
+  });
+});
+
 SpecEnd

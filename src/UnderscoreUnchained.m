@@ -111,6 +111,13 @@
   return [[block copy] autorelease];
 }
 
+- (NSArray *(^)(void))compact {
+  id block = ^NSArray * {
+    return self.chain().compact().value();
+  };
+  return [[block copy] autorelease];
+}
+
 #pragma mark - Utility
 
 - (void(^)(id))times {

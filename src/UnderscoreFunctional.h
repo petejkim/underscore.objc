@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) NSArray *(^restN)(NSArray *array, NSUInteger n);
 @property (nonatomic, readonly) NSArray *(^firstN)(NSArray *array, NSUInteger n);
 @property (nonatomic, readonly) NSArray *(^lastN)(NSArray *array, NSUInteger n);
+@property (nonatomic, readonly) NSArray *(^compact)(NSArray *array);
 
 #pragma mark - Utility
 
