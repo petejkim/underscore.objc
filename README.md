@@ -1,8 +1,8 @@
-# Underscore.cocoa
+# Underscore.ObjC
 
-Underscore.cocoa is a utility-belt library for Objective-C & Cocoa that provides a lot of the functional programming support that you would expect in languages like Ruby, but without extending any of the built-in Foundation classes. It is heavily inspired by [Underscore.js](http://documentcloud.github.com/underscore) and aims to emulate the original syntax as close as possible.
+Underscore.ObjC is a utility-belt library for Objective-C that provides a lot of the functional programming support that you would expect in languages like Ruby, but without extending any of the built-in Foundation classes. It is heavily inspired by [Underscore.js](http://documentcloud.github.com/underscore) and aims to emulate the original syntax as closely as possible within language limitations.
 
-Underscore.cocoa requires Mac OS X 10.6+ / iOS 4.0+, due to the heavy use of blocks. You may be able to compile and use the library on Mac OS X 10.5+ / iOS 3.0+ with the help of [PLBlocks](http://code.google.com/p/plblocks/), but I have not tested that myself.
+Underscore.ObjC requires Mac OS X 10.6+ / iOS 4.0+, due to the heavy use of blocks. You may be able to compile and use the library on Mac OS X 10.5+ / iOS 3.0+ with the help of [PLBlocks](http://code.google.com/p/plblocks/), but I have not tested that myself.
 
 # WORK IN PROGRESS
 
