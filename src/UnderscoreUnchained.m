@@ -118,6 +118,13 @@
   return [[block copy] autorelease];
 }
 
+- (NSArray *(^)(void))flatten {
+  id block = ^NSArray * {
+    return self.chain().flatten().value();
+  };
+  return [[block copy] autorelease];
+}
+
 #pragma mark - Utility
 
 - (void(^)(id))times {

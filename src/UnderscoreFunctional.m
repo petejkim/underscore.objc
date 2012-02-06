@@ -106,6 +106,14 @@ UnderscoreFunctional *_;
   return [[block copy] autorelease];
 }
 
+- (NSArray *(^)(NSArray *))flatten {
+  id block = ^id(NSArray *array) {
+    return _(array).flatten();
+  };
+  return [[block copy] autorelease];
+}
+
+
 #pragma mark - Utility
 
 - (void(^)(NSUInteger, id))times {

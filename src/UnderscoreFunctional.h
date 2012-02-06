@@ -24,6 +24,7 @@
 @property (nonatomic, readonly) NSArray *(^firstN)(NSArray *array, NSUInteger n);
 @property (nonatomic, readonly) NSArray *(^lastN)(NSArray *array, NSUInteger n);
 @property (nonatomic, readonly) NSArray *(^compact)(NSArray *array);
+@property (nonatomic, readonly) NSArray *(^flatten)(NSArray *array);
 
 #pragma mark - Utility
 

@@ -13,6 +13,16 @@ static BOOL isBlock(id obj) {
   return [NSStringFromClass([obj class]) rangeOfString:@"Block"].location != NSNotFound;
 }
 
+static void flattenArray(NSArray *source, NSMutableArray *target) {
+  for(id obj in source) {
+    if([obj isKindOfClass:[NSArray class]]) {
+      flattenArray(obj, target);
+    } else {
+      [target addObject:obj];
+    }
+  }
+}
+
 @implementation Underscore
 
 @synthesize
@@ -251,6 +261,20 @@ static BOOL isBlock(id obj) {
           [resultArray addObject:obj];
         }
       }
+      self.object = resultArray;
+      return self;
+    }
+    self.object = [NSArray array];
+    return self;
+  };
+  return [[block copy] autorelease];
+}
+
+- (Underscore *(^)(void))flatten {
+  id block = ^Underscore * {
+    if([self.object isKindOfClass:[NSArray class]]) {
+      NSMutableArray *resultArray = [NSMutableArray array];
+      flattenArray(self.object, resultArray);
       self.object = resultArray;
       return self;
     }

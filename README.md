@@ -80,7 +80,7 @@ Underscore.cocoa requires Mac OS X 10.6+ / iOS 4.0+, due to the heavy use of blo
 ✓ rest             = × tail
 ✓ restN
 ✓ compact
-× flatten
+✓ flatten
 × union
 × intersection
 × difference

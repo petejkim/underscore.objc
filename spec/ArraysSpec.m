@@ -185,4 +185,22 @@ describe(@"compact", ^{
   });
 });
 
+describe(@"flatten", ^{
+  before(^{
+    arr = _a(@"1", _a(@"2"), _a(@"3", _a(_a(@"4"))));
+  });
+
+  specify(@"functional style", ^{
+    expect(_.flatten(arr)).toEqual(_a(@"1", @"2", @"3", @"4"));
+  });
+
+  specify(@"object-oriented style", ^{
+    expect(_(arr).flatten()).toEqual(_a(@"1", @"2", @"3", @"4"));
+  });
+
+  specify(@"chained", ^{
+    expect(_(arr).chain().flatten().value()).toEqual(_a(@"1", @"2", @"3", @"4"));
+  });
+});
+
 SpecEnd

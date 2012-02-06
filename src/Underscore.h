@@ -27,6 +27,7 @@
 @property (nonatomic, readonly) Underscore *(^firstN)(NSUInteger n);
 @property (nonatomic, readonly) Underscore *(^lastN)(NSUInteger n);
 @property (nonatomic, readonly) Underscore *(^compact)(void);
+@property (nonatomic, readonly) Underscore *(^flatten)(void);
 
 #pragma mark - Utility
 
