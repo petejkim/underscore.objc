@@ -12,36 +12,36 @@ Underscore.ObjC requires Mac OS X 10.6+ / iOS 4.0+, due to the heavy use of bloc
 ### Macros
 
 ```
-✓ _a               = ✓ _arr
-✓ _ma              = ✓ _marr
-✓ _s               = ✓ _str
-✓ _ms              = ✓ _mstr
-✓ _d               = ✓ _dict
-✓ _md              = ✓ _mdict
-✓ _kv
-✓ _$               = ✓ _str
-✓ _m$              = ✓ _mstr
-✓ _bool
-✓ _int
-✓ _float
-✓ _char
-✓ _double
-✓ _integer
-✓ _long
-✓ _longlong        = ✓ _longLong
-✓ _short
-✓ _uchar           = ✓ _unsignedChar
-✓ _uint            = ✓ _unsignedInt
-✓ _uinteger        = ✓ _unsignedInteger
-✓ _ulong           = ✓ _unsignedLong
-✓ _ulonglong       = ✓ _unsignedLongLong
-✓ _ushort          = ✓ _unsignedShort
-✓ _nonretained     = ✓ _nonretainedObject
-✓ _pointer
-✓ _point
-✓ _range
-✓ _rect
-✓ _size
+✓ a_               = ✓ arr_
+✓ ma_              = ✓ marr_
+✓ s_               = ✓ str_
+✓ ms_              = ✓ mstr_
+✓ d_               = ✓ dict_
+✓ md_              = ✓ mdict_
+✓ kv_
+✓ $_               = ✓ str_
+✓ m$_              = ✓ mstr_
+✓ bool_
+✓ int_
+✓ float_
+✓ char_
+✓ double_
+✓ integer_
+✓ long_
+✓ longlong_        = ✓ longLong_
+✓ short_
+✓ uchar_           = ✓ unsignedChar_
+✓ uint_            = ✓ unsignedInt_
+✓ uinteger_        = ✓ unsignedInteger_
+✓ ulong_           = ✓ unsignedLong_
+✓ ulonglong_       = ✓ unsignedLongLong_
+✓ ushort_          = ✓ unsignedShort_
+✓ nonretained_     = ✓ nonretainedObject_
+✓ pointer_
+✓ point_
+✓ range_
+✓ rect_
+✓ size_
 ```
 
 ### Collections (Arrays, Sets, Dictionaries)
@@ -170,4 +170,3 @@ Thanks to Jeremy Ashkenas and all contributors to Underscore.js.
 ## AUTHOR & LICENSE
 
 Copyright (c) 2012 Peter Jihoon Kim. This software is licensed under the [MIT License](http://github.com/petejkim/specta/raw/master/LICENSE).
-

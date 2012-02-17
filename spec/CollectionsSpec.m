@@ -11,12 +11,12 @@ __block NSMutableDictionary *dic2;
 __block id val;
 
 before(^{
-  arr = _a(@"foo", @"bar");
-  arr2 = _ma(nil);
-  set = _s(@"foo", @"bar");
-  set2 = _ms(nil);
-  dic = _d(_kv(@"foo", @"bar"), _kv(@"baz", @"qux"));
-  dic2 = _md(nil);
+  arr = a_(@"foo", @"bar");
+  arr2 = ma_(nil);
+  set = s_(@"foo", @"bar");
+  set2 = ms_(nil);
+  dic = d_(kv_(@"foo", @"bar"), kv_(@"baz", @"qux"));
+  dic2 = md_(nil);
 });
 
 describe(@"each", ^{
@@ -109,7 +109,7 @@ describe(@"map", ^{
         expect([list objectAtIndex:index]).toEqual(element);
         return [element stringByAppendingString:@"."];
       });
-      expect(arr).toEqual(_a(@"foo.", @"bar."));
+      expect(arr).toEqual(a_(@"foo.", @"bar."));
     });
 
     specify(@"object-oriented style", ^{
@@ -117,7 +117,7 @@ describe(@"map", ^{
         expect([list objectAtIndex:index]).toEqual(element);
         return [element stringByAppendingString:@"."];
       });
-      expect(arr).toEqual(_a(@"foo.", @"bar."));
+      expect(arr).toEqual(a_(@"foo.", @"bar."));
     });
 
     specify(@"chained", ^{
@@ -125,7 +125,7 @@ describe(@"map", ^{
         expect([list objectAtIndex:index]).toEqual(element);
         return [element stringByAppendingString:@"."];
       }).value();
-      expect(val).toEqual(_a(@"foo.", @"bar."));
+      expect(val).toEqual(a_(@"foo.", @"bar."));
     });
   });
 
@@ -135,7 +135,7 @@ describe(@"map", ^{
         expect([list containsObject:element]).toEqual(YES);
         return [element stringByAppendingString:@"."];
       });
-      expect(arr).toEqual(_a(@"foo.", @"bar."));
+      expect(arr).toEqual(a_(@"foo.", @"bar."));
     });
 
     specify(@"object-oriented style", ^{
@@ -143,7 +143,7 @@ describe(@"map", ^{
         expect([list containsObject:element]).toEqual(YES);
         return [element stringByAppendingString:@"."];
       });
-      expect(arr).toEqual(_a(@"foo.", @"bar."));
+      expect(arr).toEqual(a_(@"foo.", @"bar."));
     });
 
     specify(@"chained", ^{
@@ -151,7 +151,7 @@ describe(@"map", ^{
         expect([list containsObject:element]).toEqual(YES);
         return [element stringByAppendingString:@"."];
       }).value();
-      expect(val).toEqual(_a(@"foo.", @"bar."));
+      expect(val).toEqual(a_(@"foo.", @"bar."));
     });
   });
 
@@ -161,7 +161,7 @@ describe(@"map", ^{
         expect([list objectForKey:key]).toEqual(value);
         return [value stringByAppendingString:@"."];
       });
-      expect(arr).toEqual(_a(@"bar.", @"qux."));
+      expect(arr).toEqual(a_(@"bar.", @"qux."));
     });
 
     specify(@"object-oriented style", ^{
@@ -169,7 +169,7 @@ describe(@"map", ^{
         expect([list objectForKey:key]).toEqual(value);
         return [value stringByAppendingString:@"."];
       });
-      expect(arr).toEqual(_a(@"bar.", @"qux."));
+      expect(arr).toEqual(a_(@"bar.", @"qux."));
     });
 
     specify(@"chained", ^{
@@ -177,7 +177,7 @@ describe(@"map", ^{
         expect([list objectForKey:key]).toEqual(value);
         return [value stringByAppendingString:@"."];
       }).value();
-      expect(val).toEqual(_a(@"bar.", @"qux."));
+      expect(val).toEqual(a_(@"bar.", @"qux."));
     });
   });
 });
@@ -185,70 +185,70 @@ describe(@"map", ^{
 describe(@"reduce", ^{
   context(@"Array", ^{
     specify(@"functional style", ^{
-      val = _.reduce(_a(_int(1), _int(2), _int(3)), ^(id memo, id num) {
-        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
-      }, _int(0));
-      expect(val).toEqual(_int(6));
+      val = _.reduce(a_(int_(1), int_(2), int_(3)), ^(id memo, id num) {
+        return int_([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
+      }, int_(0));
+      expect(val).toEqual(int_(6));
     });
 
     specify(@"object-oriented style", ^{
-      val = _(_a(_int(1), _int(2), _int(3))).reduce(^(id memo, id num) {
-        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
-      }, _int(0));
-      expect(val).toEqual(_int(6));
+      val = _(a_(int_(1), int_(2), int_(3))).reduce(^(id memo, id num) {
+        return int_([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
+      }, int_(0));
+      expect(val).toEqual(int_(6));
     });
 
     specify(@"chained", ^{
-      val = _(_a(_int(1), _int(2), _int(3))).chain().reduce(^(id memo, id num) {
-        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
-      }, _int(0)).value();
-      expect(val).toEqual(_int(6));
+      val = _(a_(int_(1), int_(2), int_(3))).chain().reduce(^(id memo, id num) {
+        return int_([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
+      }, int_(0)).value();
+      expect(val).toEqual(int_(6));
     });
   });
 
   context(@"Set", ^{
     specify(@"functional style", ^{
-      val = _.reduce(_s(_int(1), _int(2), _int(3)), ^(id memo, id num) {
-        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
-      }, _int(0));
-      expect(val).toEqual(_int(6));
+      val = _.reduce(s_(int_(1), int_(2), int_(3)), ^(id memo, id num) {
+        return int_([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
+      }, int_(0));
+      expect(val).toEqual(int_(6));
     });
 
     specify(@"object-oriented style", ^{
-      val = _(_s(_int(1), _int(2), _int(3))).reduce(^(id memo, id num) {
-        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
-      }, _int(0));
-      expect(val).toEqual(_int(6));
+      val = _(s_(int_(1), int_(2), int_(3))).reduce(^(id memo, id num) {
+        return int_([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
+      }, int_(0));
+      expect(val).toEqual(int_(6));
     });
 
     specify(@"chained", ^{
-      val = _(_s(_int(1), _int(2), _int(3))).chain().reduce(^(id memo, id num) {
-        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
-      }, _int(0)).value();
-      expect(val).toEqual(_int(6));
+      val = _(s_(int_(1), int_(2), int_(3))).chain().reduce(^(id memo, id num) {
+        return int_([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
+      }, int_(0)).value();
+      expect(val).toEqual(int_(6));
     });
   });
 
   context(@"Dictionary", ^{
     specify(@"functional style", ^{
-      val = _.reduce(_d(_kv(@"foo", _int(1)), _kv(@"bar", _int(2)), _kv(@"baz", _int(3))), ^(id memo, id num) {
-        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
-      }, _int(0));
-      expect(val).toEqual(_int(6));
+      val = _.reduce(d_(kv_(@"foo", int_(1)), kv_(@"bar", int_(2)), kv_(@"baz", int_(3))), ^(id memo, id num) {
+        return int_([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
+      }, int_(0));
+      expect(val).toEqual(int_(6));
     });
 
     specify(@"object-oriented style", ^{
-      val = _(_d(_kv(@"foo", _int(1)), _kv(@"bar", _int(2)), _kv(@"baz", _int(3)))).reduce(^(id memo, id num) {
-        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
-      }, _int(0));
-      expect(val).toEqual(_int(6));
+      val = _(d_(kv_(@"foo", int_(1)), kv_(@"bar", int_(2)), kv_(@"baz", int_(3)))).reduce(^(id memo, id num) {
+        return int_([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
+      }, int_(0));
+      expect(val).toEqual(int_(6));
     });
 
     specify(@"chained", ^{
-      val = _(_d(_kv(@"foo", _int(1)), _kv(@"bar", _int(2)), _kv(@"baz", _int(3)))).chain().reduce(^(id memo, id num) {
-        return _int([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
-      }, _int(0)).value();
-      expect(val).toEqual(_int(6));
+      val = _(d_(kv_(@"foo", int_(1)), kv_(@"bar", int_(2)), kv_(@"baz", int_(3)))).chain().reduce(^(id memo, id num) {
+        return int_([(NSNumber *)memo intValue] + [(NSNumber *)num intValue]);
+      }, int_(0)).value();
+      expect(val).toEqual(int_(6));
     });
   });
 });
@@ -265,7 +265,7 @@ describe(@"size", ^{
 
     specify(@"chained", ^{
       val = _(arr).chain().size().value();
-      expect(val).toEqual(_uinteger(2));
+      expect(val).toEqual(uinteger_(2));
     });
   });
 
@@ -280,7 +280,7 @@ describe(@"size", ^{
 
     specify(@"chained", ^{
       val = _(set).chain().size().value();
-      expect(val).toEqual(_uinteger(2));
+      expect(val).toEqual(uinteger_(2));
     });
   });
 
@@ -295,7 +295,7 @@ describe(@"size", ^{
 
     specify(@"chained", ^{
       val = _(dic).chain().size().value();
-      expect(val).toEqual(_uinteger(2));
+      expect(val).toEqual(uinteger_(2));
     });
   });
 });

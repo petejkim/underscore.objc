@@ -6,8 +6,8 @@ __block NSArray *arr;
 __block NSMutableArray *arr2;
 
 before(^{
-  arr = _a(@"foo", @"bar", @"baz", @"qux");
-  arr2 = _ma(nil);
+  arr = a_(@"foo", @"bar", @"baz", @"qux");
+  arr2 = ma_(nil);
 });
 
 describe(@"chain", ^{
@@ -17,7 +17,7 @@ describe(@"chain", ^{
     }).each(^(id element, NSUInteger index, NSArray *list) {
       [arr2 addObject:element];
     }).value();
-    expect(arr2).toEqual(_a(@"foo.", @"bar.", @"baz.", @"qux."));
+    expect(arr2).toEqual(a_(@"foo.", @"bar.", @"baz.", @"qux."));
   });
 
   specify(@"object-oriented style", ^{
@@ -26,7 +26,7 @@ describe(@"chain", ^{
     }).each(^(id element, NSUInteger index, NSArray *list) {
       [arr2 addObject:element];
     }).value();
-    expect(arr2).toEqual(_a(@"foo.", @"bar.", @"baz.", @"qux."));
+    expect(arr2).toEqual(a_(@"foo.", @"bar.", @"baz.", @"qux."));
   });
 });
 

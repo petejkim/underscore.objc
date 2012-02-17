@@ -1,51 +1,51 @@
-// Adapted from ConciseKit
-#define _a(...)   [NSArray arrayWithObjects:__VA_ARGS__, nil]
-#define _ma(...)  [NSMutableArray arrayWithObjects:__VA_ARGS__, nil]
-#define _s(...)   [NSSet setWithObjects:__VA_ARGS__, nil]
-#define _ms(...)  [NSMutableSet setWithObjects:__VA_ARGS__, nil]
-#define _d(...)   [NSDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__, nil]
-#define _md(...)  [NSMutableDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__, nil]
-#define _kv(k, v) (v), (k)
-#define _$(...)   [NSString stringWithFormat:__VA_ARGS__]
-#define _m$(...)  [NSMutableString stringWithFormat:__VA_ARGS__]
+/* Adapted from ConciseKit */
+#define a_(...)   [NSArray arrayWithObjects:__VA_ARGS__, nil]
+#define ma_(...)  [NSMutableArray arrayWithObjects:__VA_ARGS__, nil]
+#define s_(...)   [NSSet setWithObjects:__VA_ARGS__, nil]
+#define ms_(...)  [NSMutableSet setWithObjects:__VA_ARGS__, nil]
+#define d_(...)   [NSDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__, nil]
+#define md_(...)  [NSMutableDictionary dictionaryWithObjectsAndKeys:__VA_ARGS__, nil]
+#define kv_(k, v) (v), (k)
+#define $_(...)   [NSString stringWithFormat:__VA_ARGS__]
+#define m$_(...)  [NSMutableString stringWithFormat:__VA_ARGS__]
 
-#define _arr(...)   _a(__VA_ARGS__)
-#define _marr(...)  _ma(__VA_ARGS__)
-#define _set(...)   _s(__VA_ARGS__)
-#define _mset(...)  _ms(__VA_ARGS__)
-#define _dict(...)  _d(__VA_ARGS__)
-#define _mdict(...) _md(__VA_ARGS__)
-#define _str(...)   _$(__VA_ARGS__)
-#define _mstr(...)  _m$(__VA_ARGS__)
+#define arr_(...)   a_(__VA_ARGS__)
+#define marr_(...)  ma_(__VA_ARGS__)
+#define set_(...)   s_(__VA_ARGS__)
+#define mset_(...)  ms_(__VA_ARGS__)
+#define dict_(...)  d_(__VA_ARGS__)
+#define mdict_(...) md_(__VA_ARGS__)
+#define str_(...)   $_(__VA_ARGS__)
+#define mstr_(...)  m$_(__VA_ARGS__)
 
-#define _bool(val)      [NSNumber numberWithBool:(val)]
-#define _char(val)      [NSNumber numberWithChar:(val)]
-#define _double(val)    [NSNumber numberWithDouble:(val)]
-#define _float(val)     [NSNumber numberWithFloat:(val)]
-#define _int(val)       [NSNumber numberWithInt:(val)]
-#define _integer(val)   [NSNumber numberWithInteger:(val)]
-#define _long(val)      [NSNumber numberWithLong:(val)]
-#define _longlong(val)  [NSNumber numberWithLongLong:(val)]
-#define _short(val)     [NSNumber numberWithShort:(val)]
-#define _uchar(val)     [NSNumber numberWithUnsignedChar:(val)]
-#define _uint(val)      [NSNumber numberWithUnsignedInt:(val)]
-#define _uinteger(val)  [NSNumber numberWithUnsignedInteger:(val)]
-#define _ulong(val)     [NSNumber numberWithUnsignedLong:(val)]
-#define _ulonglong(val) [NSNumber numberWithUnsignedLongLong:(val)]
-#define _ushort(val)    [NSNumber numberWithUnsignedShort:(val)]
+#define bool_(val)      [NSNumber numberWithBool:(val)]
+#define char_(val)      [NSNumber numberWithChar:(val)]
+#define double_(val)    [NSNumber numberWithDouble:(val)]
+#define float_(val)     [NSNumber numberWithFloat:(val)]
+#define int_(val)       [NSNumber numberWithInt:(val)]
+#define integer_(val)   [NSNumber numberWithInteger:(val)]
+#define long_(val)      [NSNumber numberWithLong:(val)]
+#define longlong_(val)  [NSNumber numberWithLongLong:(val)]
+#define short_(val)     [NSNumber numberWithShort:(val)]
+#define uchar_(val)     [NSNumber numberWithUnsignedChar:(val)]
+#define uint_(val)      [NSNumber numberWithUnsignedInt:(val)]
+#define uinteger_(val)  [NSNumber numberWithUnsignedInteger:(val)]
+#define ulong_(val)     [NSNumber numberWithUnsignedLong:(val)]
+#define ulonglong_(val) [NSNumber numberWithUnsignedLongLong:(val)]
+#define ushort_(val)    [NSNumber numberWithUnsignedShort:(val)]
 
-#define _nonretained(val) [NSValue valueWithNonretainedObject:(val)]
-#define _pointer(val)     [NSValue valueWithPointer:(val)]
-#define _point(val)       [NSValue valueWithPoint:(val)]
-#define _range(val)       [NSValue valueWithRange:(val)]
-#define _rect(val)        [NSValue valueWithRect:(val)]
-#define _size(val)        [NSValue valueWithSize:(val)]
+#define nonretained_(val) [NSValue valueWithNonretainedObject:(val)]
+#define pointer_(val)     [NSValue valueWithPointer:(val)]
+#define point_(val)       [NSValue valueWithPoint:(val)]
+#define range_(val)       [NSValue valueWithRange:(val)]
+#define rect_(val)        [NSValue valueWithRect:(val)]
+#define size_(val)        [NSValue valueWithSize:(val)]
 
-#define _longLong(val)          _longlong(val)
-#define _unsignedChar(val)      _uchar(val)
-#define _unsignedInt(val)       _uint(val)
-#define _unsignedInteger(val)   _uinteger(val)
-#define _unsignedLong(val)      _ulong(val)
-#define _unsignedLongLong(val)  _ulonglong(val)
-#define _unsignedShort(val)     _ushort(val)
-#define _nonretainedObject(val) _nonretained(val)
+#define longLong_(val)          longlong_(val)
+#define unsignedChar_(val)      uchar_(val)
+#define unsignedInt_(val)       uint_(val)
+#define unsignedInteger_(val)   uinteger_(val)
+#define unsignedLong_(val)      ulong_(val)
+#define unsignedLongLong_(val)  ulonglong_(val)
+#define unsignedShort_(val)     ushort_(val)
+#define nonretainedObject_(val) nonretained_(val)

@@ -7,21 +7,21 @@ describe(@"times", ^{
   __block id val;
 
   before(^{
-    arr = _ma(nil);
+    arr = ma_(nil);
   });
 
   specify(@"functional style", ^{
     _.times(3, ^(NSUInteger i) {
       [arr addObject:[NSString stringWithFormat:@"%d", (unsigned int)i]];
     });
-    expect(arr).toEqual(_a(@"0",@"1",@"2"));
+    expect(arr).toEqual(a_(@"0",@"1",@"2"));
   });
 
   specify(@"object oriented style", ^{
     _(3).times(^(NSUInteger i) {
       [arr addObject:[NSString stringWithFormat:@"%d", (unsigned int)i]];
     });
-    expect(arr).toEqual(_a(@"0",@"1",@"2"));
+    expect(arr).toEqual(a_(@"0",@"1",@"2"));
   });
 
   specify(@"chained", ^{
@@ -29,7 +29,7 @@ describe(@"times", ^{
       [arr addObject:[NSString stringWithFormat:@"%d", (unsigned int)i]];
     }).value();
     expect(val).toBeNil();
-    expect(arr).toEqual(_a(@"0",@"1",@"2"));
+    expect(arr).toEqual(a_(@"0",@"1",@"2"));
   });
 });
 

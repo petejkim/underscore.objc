@@ -2,139 +2,139 @@
 
 SpecBegin(Underscore_Macros)
 
-describe(@"_a", ^{
+describe(@"a_", ^{
   it(@"creates an array with the objects in the arguments", ^{
-    id arr = _a(@"foo", @"bar", @"baz");
+    id arr = a_(@"foo", @"bar", @"baz");
     expect(arr).toBeKindOf([NSArray class]);
     expect(arr).toEqual(([NSArray arrayWithObjects:@"foo", @"bar", @"baz", nil]));
   });
 });
 
-describe(@"_ma", ^{
+describe(@"ma_", ^{
   it(@"creates a mutable array with the objects in the arguments", ^{
-    id arr = _ma(@"foo", @"bar", @"baz");
+    id arr = ma_(@"foo", @"bar", @"baz");
     expect(arr).toBeKindOf([NSMutableArray class]);
     expect(arr).toEqual(([NSMutableArray arrayWithObjects:@"foo", @"bar", @"baz", nil]));
   });
 });
 
-describe(@"_s", ^{
+describe(@"s_", ^{
   it(@"creates a set with the objects in the arguments", ^{
-    id set = _s(@"foo", @"bar", @"baz");
+    id set = s_(@"foo", @"bar", @"baz");
     expect(set).toBeKindOf([NSSet class]);
     expect(set).toEqual(([NSSet setWithObjects:@"foo", @"bar", @"baz", nil]));
   });
 });
 
-describe(@"_ms", ^{
+describe(@"ms_", ^{
   it(@"creates a mutable set with the objects in the arguments", ^{
-    id set = _ms(@"foo", @"bar", @"baz");
+    id set = ms_(@"foo", @"bar", @"baz");
     expect(set).toBeKindOf([NSMutableSet class]);
     expect(set).toEqual(([NSMutableSet setWithObjects:@"foo", @"bar", @"baz", nil]));
   });
 });
 
-describe(@"_d", ^{
+describe(@"d_", ^{
   it(@"creates a dictionary with the objects in the arguments", ^{
-    id dic = _d(@"val1", @"key1", @"val2", @"key2");
+    id dic = d_(@"val1", @"key1", @"val2", @"key2");
     expect(dic).toBeKindOf([NSDictionary class]);
     expect(dic).toEqual(([NSDictionary dictionaryWithObjectsAndKeys:@"val1", @"key1", @"val2", @"key2", nil]));
   });
 });
 
-describe(@"_md", ^{
+describe(@"md_", ^{
   it(@"creates a mutable dictionary with the objects in the arguments", ^{
-    id dic = _md(@"val1", @"key1", @"val2", @"key2");
+    id dic = md_(@"val1", @"key1", @"val2", @"key2");
     expect(dic).toBeKindOf([NSMutableDictionary class]);
     expect(dic).toEqual(([NSMutableDictionary dictionaryWithObjectsAndKeys:@"val1", @"key1", @"val2", @"key2", nil]));
   });
 });
 
-describe(@"_kv", ^{
+describe(@"kv_", ^{
   it(@"swaps the order of two arguments", ^{
-    id dic = _d(_kv(@"key1", @"val1"), _kv(@"key2", @"val2"));
+    id dic = d_(kv_(@"key1", @"val1"), kv_(@"key2", @"val2"));
     expect(dic).toBeKindOf([NSDictionary class]);
     expect(dic).toEqual(([NSDictionary dictionaryWithObjectsAndKeys:@"val1", @"key1", @"val2", @"key2", nil]));
   });
 });
 
-describe(@"_$", ^{
+describe(@"$_", ^{
   it(@"creates a formatted string", ^{
-    id str = _$(@"<%@>", @"foo");
+    id str = $_(@"<%@>", @"foo");
     expect(str).toBeKindOf([NSString class]);
     expect(str).toEqual(@"<foo>");
   });
 });
 
-describe(@"_m$", ^{
+describe(@"m$_", ^{
   it(@"creates a formatted mutable string", ^{
-    id str = _m$(@"<%@>", @"foo");
+    id str = m$_(@"<%@>", @"foo");
     expect(str).toBeKindOf([NSMutableString class]);
     expect(str).toEqual(@"<foo>");
   });
 });
 
-describe(@"_arr", ^{
+describe(@"arr_", ^{
   it(@"is an alias for _a", ^{
-    id arr = _arr(@"foo", @"bar");
+    id arr = arr_(@"foo", @"bar");
     expect(arr).toBeKindOf([NSArray class]);
-    expect(arr).toEqual(_a(@"foo", @"bar"));
+    expect(arr).toEqual(a_(@"foo", @"bar"));
   });
 });
 
-describe(@"_marr", ^{
+describe(@"marr_", ^{
   it(@"is an alias for _ma", ^{
-    id arr = _marr(@"foo", @"bar");
+    id arr = marr_(@"foo", @"bar");
     expect(arr).toBeKindOf([NSMutableArray class]);
-    expect(arr).toEqual(_ma(@"foo", @"bar"));
+    expect(arr).toEqual(ma_(@"foo", @"bar"));
   });
 });
 
-describe(@"_set", ^{
+describe(@"set_", ^{
   it(@"is an alias for _s", ^{
-    id set = _set(@"foo", @"bar");
+    id set = set_(@"foo", @"bar");
     expect(set).toBeKindOf([NSSet class]);
-    expect(set).toEqual(_s(@"foo", @"bar"));
+    expect(set).toEqual(s_(@"foo", @"bar"));
   });
 });
 
-describe(@"_mset", ^{
+describe(@"mset_", ^{
   it(@"is an alias for _ms", ^{
-    id set = _mset(@"foo", @"bar");
+    id set = mset_(@"foo", @"bar");
     expect(set).toBeKindOf([NSMutableSet class]);
-    expect(set).toEqual(_ms(@"foo", @"bar"));
+    expect(set).toEqual(ms_(@"foo", @"bar"));
   });
 });
 
-describe(@"_dict", ^{
+describe(@"dict_", ^{
   it(@"is an alias for _d", ^{
-    id dic = _dict(@"val1", @"key1", @"val2", @"key2");
+    id dic = dict_(@"val1", @"key1", @"val2", @"key2");
     expect(dic).toBeKindOf([NSDictionary class]);
-    expect(dic).toEqual(_d(@"val1", @"key1", @"val2", @"key2"));
+    expect(dic).toEqual(d_(@"val1", @"key1", @"val2", @"key2"));
   });
 });
 
-describe(@"_mdict", ^{
+describe(@"mdict_", ^{
   it(@"is an alias for _md", ^{
-    id dic = _mdict(@"val1", @"key1", @"val2", @"key2");
+    id dic = mdict_(@"val1", @"key1", @"val2", @"key2");
     expect(dic).toBeKindOf([NSMutableDictionary class]);
-    expect(dic).toEqual(_md(@"val1", @"key1", @"val2", @"key2"));
+    expect(dic).toEqual(md_(@"val1", @"key1", @"val2", @"key2"));
   });
 });
 
-describe(@"_str", ^{
+describe(@"str_", ^{
   it(@"is an alias for _$", ^{
-    id str = _str(@"<%@>", @"foo");
+    id str = str_(@"<%@>", @"foo");
     expect(str).toBeKindOf([NSString class]);
-    expect(str).toEqual(_$(@"<%@>", @"foo"));
+    expect(str).toEqual($_(@"<%@>", @"foo"));
   });
 });
 
-describe(@"_mstr", ^{
+describe(@"mstr_", ^{
   it(@"is an alias for _m$", ^{
-    id str = _mstr(@"<%@>", @"foo");
+    id str = mstr_(@"<%@>", @"foo");
     expect(str).toBeKindOf([NSMutableString class]);
-    expect(str).toEqual(_m$(@"<%@>", @"foo"));
+    expect(str).toEqual(m$_(@"<%@>", @"foo"));
   });
 });
 
